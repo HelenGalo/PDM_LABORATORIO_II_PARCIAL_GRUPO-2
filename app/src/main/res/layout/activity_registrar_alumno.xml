@@ -23,7 +23,26 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintHorizontal_bias="0.217"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_regresar"
+        android:layout_width="154dp"
+        android:layout_height="61dp"
+        android:layout_marginBottom="36dp"
+        android:background="@color/red4"
+        android:foreground="@drawable/ic_launcher_foreground"
+        android:foregroundGravity="fill_horizontal|left|bottom|center_vertical|clip_horizontal|center|clip_vertical|center_horizontal"
+        android:freezesText="false"
+        android:gravity="center|start|right|top"
+        android:text="@string/REGRESAR"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.879"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView

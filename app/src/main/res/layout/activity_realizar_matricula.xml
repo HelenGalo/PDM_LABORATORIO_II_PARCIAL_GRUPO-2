@@ -7,6 +7,24 @@
     android:layout_height="match_parent"
     tools:context=".RealizarMatricula">
 
+    <Button
+        android:id="@+id/btn_regresar2"
+        android:layout_width="154dp"
+        android:layout_height="61dp"
+        android:layout_marginBottom="88dp"
+        android:background="@color/red4"
+        android:foreground="@android:drawable/ic_menu_rotate"
+        android:foregroundGravity="top|bottom|clip_horizontal|right"
+        android:freezesText="false"
+        android:text="@string/REGRESAR"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.937"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <TextView
         android:id="@+id/txv_NoClases2"
         android:layout_width="wrap_content"
@@ -110,16 +128,16 @@
         android:id="@+id/btn_Matricular"
         android:layout_width="187dp"
         android:layout_height="65dp"
-        android:layout_marginBottom="72dp"
-        android:text="@string/Guardar"
+        android:layout_marginBottom="84dp"
         android:background="@color/red4"
         android:foreground="@android:drawable/ic_menu_save"
         android:foregroundGravity="top|bottom|clip_horizontal|right"
         android:freezesText="false"
+        android:text="@string/Guardar"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.169"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
