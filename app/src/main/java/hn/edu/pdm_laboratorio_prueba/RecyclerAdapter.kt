@@ -54,9 +54,9 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
     }
 
 
-        override fun onClick(itemView: View){
+        override fun onClick(v: View){
 
-            val context: Context = itemView.getContext()
+            val context: Context = v.getContext()
             val intent = Intent(context, IngresarNotas::class.java)
             context.startActivity(intent)
 
