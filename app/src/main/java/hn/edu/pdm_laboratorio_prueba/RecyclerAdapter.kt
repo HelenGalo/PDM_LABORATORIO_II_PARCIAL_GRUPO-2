@@ -1,5 +1,4 @@
 package hn.edu.pdm_laboratorio_prueba
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,10 +11,6 @@ import androidx.recyclerview.widget.RecyclerView
 
 
 class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
-
-    interface On{
-        fun onClick()
-    }
 
     private val titles = arrayOf("Registrar Alumno",
             "Matricula", "Registrar Clase", "Ingresar Notas",
@@ -52,13 +47,8 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
                 Snackbar.make(v,"Click  en el item $position",
                     Snackbar.LENGTH_LONG).setAction("Action",null).show()
-
             }
         }
-    }
-
-    override fun onClick(){
-        val intent = Intent(this, IngresarNotas::class.java)startActivity(intent)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, i: Int) {
