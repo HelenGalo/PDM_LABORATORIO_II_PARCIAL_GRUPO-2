@@ -46,9 +46,9 @@ class RealizarMatricula : AppCompatActivity() {
         num += 1
         parametro.append(txt_nCuentaMat.text.toString().trim()).append("|")
         parametro.append(txv_Seleccion.text.toString().trim()).append("|")
-        Toast.makeText(this, "Matricula Realizada", Toast.LENGTH_SHORT).show()
-        datos_Matricula.put(num, parametro.toString())
 
+        datos_Matricula.put(num, parametro.toString())
+        Toast.makeText(this, "Matricula Realizada", Toast.LENGTH_SHORT).show()
     }
 
     private fun enviar(){

@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(findViewById(R.id.toolbar))
 
         collapsing_toolbar.title = "UJCV"
-        collapsing_toolbar.setContentScrimColor(Color.GRAY)
+        collapsing_toolbar.setContentScrimColor(Color.BLACK)
 
         layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager
