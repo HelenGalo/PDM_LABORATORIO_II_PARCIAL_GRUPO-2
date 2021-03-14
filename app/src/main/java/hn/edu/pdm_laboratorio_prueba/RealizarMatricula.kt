@@ -3,6 +3,12 @@ package hn.edu.pdm_laboratorio_prueba
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.Spinner
+import android.widget.Toast
+import androidx.core.view.get
 import kotlinx.android.synthetic.main.activity_realizar_matricula.*
 import kotlinx.android.synthetic.main.activity_registrar_alumno.*
 import java.lang.StringBuilder
@@ -13,15 +19,34 @@ class RealizarMatricula : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_realizar_matricula)
+
         btn_Matricular.setOnClickListener { guardar() }
         btn_regresar2.setOnClickListener { regresar1() }
+
+        val spinnerClase = findViewById<Spinner>(R.id.spinner_C)
+        val listaClases = resources.getStringArray(R.array.valoresClases)
+        val adaptador = ArrayAdapter(this,android.R.layout.simple_spinner_item,listaClases)
+        spinnerClase.adapter =adaptador
+        spinnerClase.onItemSelectedListener = object:
+            AdapterView.OnItemSelectedListener{
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                txv_Seleccion.text= "Seleccione una opcion"
+            }
+
+            override fun onItemSelected(
+                parent: AdapterView<*>?, view: View?, position: Int, id: Long
+            ) {
+                txv_Seleccion.text= listaClases[position].toString()
+            }
+        }
     }
 
     private  fun guardar() {
         val parametro = StringBuilder()
         num += 1
         parametro.append(txt_nCuentaMat.text.toString().trim()).append("|")
-
+        parametro.append(txv_Seleccion.text.toString().trim()).append("|")
+        Toast.makeText(this, "Matricula Realizada", Toast.LENGTH_SHORT).show()
         datos_Matricula.put(num, parametro.toString())
 
     }

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="valoresClases">
+        <item>Matematicas</item>
+        <item>Español</item>
+        <item>Programacion</item>
+        <item>Historia</item>
+        <item>Fisica</item>
+        <item>Quimica</item>
+        <item>Artes</item>
+    </string-array>
+
+    <string-array name="valoresSeccion">
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+        <item>D</item>
+        <item>E</item>
+        <item>F</item>
+    </string-array>
+
+    <string-array name="valoresEdificio">
+        <item>A-T</item>
+        <item>G-B</item>
+        <item>C-H</item>
+        <item>L-D</item>
+        <item>E-K</item>
+    </string-array>
+
+    <string-array name="valoresAula">
+        <item>301-E</item>
+        <item>402-B</item>
+        <item>503-H</item>
+        <item>604-D</item>
+        <item>705-K</item>
+    </string-array>
+
+    <string-array name="valoresHora">
+        <item>10:00-12:00</item>
+        <item>13:00-15:00</item>
+        <item>07:00-09:00</item>
+        <item>06:00-08:00</item>
+        <item>16:00-18:00</item>
+    </string-array>
+
+</resources>

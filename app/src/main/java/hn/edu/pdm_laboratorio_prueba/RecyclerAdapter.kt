@@ -59,19 +59,21 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
                         ).setAction("Action", null).show()
                     }
                 } else {
-                val context: Context = itemView.getContext()
-                val intent = Intent(context, RealizarMatricula::class.java)
-                context.startActivity(intent)
+
+                    val context1: Context = itemView.getContext()
+                    val intent = Intent(context1, RealizarMatricula::class.java)
+                    context1.startActivity(intent)
+
 
                 }
 
 
             }
 
-        }
-
 
         }
+    }
+
 
 
 
