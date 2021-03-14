@@ -51,6 +51,10 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
         }
     }
 
+    override fun onClick(){
+
+    }
+
     override fun onBindViewHolder(holder: ViewHolder, i: Int) {
         holder.itemTitle.text= titles[i]
         holder.itemDetail.text= details[i]
