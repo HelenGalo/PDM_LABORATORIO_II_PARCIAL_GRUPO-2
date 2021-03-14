@@ -4,12 +4,10 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
-import  android.widget.ImageView
-import com.google.android.material.snackbar.Snackbar
 import androidx.recyclerview.widget.RecyclerView
-
-
+import com.google.android.material.snackbar.Snackbar
 
 
 class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
@@ -45,35 +43,37 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
         var itemTitle: TextView
         var itemDetail: TextView
 
+
         init {
             itemImage = itemView.findViewById(R.id.item_image)
             itemTitle = itemView.findViewById(R.id.item_title)
             itemDetail = itemView.findViewById(R.id.item_detail)
 
             itemView.setOnClickListener { v: View? ->
-                if (v == itemDetail) {
-                    val context: Context = itemView.getContext()
-                    val intent = Intent(context, IngresarNotas::class.java)
-                    context.startActivity(intent)
-                } else {
-
-                    var position: Int = getAdapterPosition()
-                    if (v != null) {
+                var position: Int = getAdapterPosition()
+                if (v == null) {
+                    if (v != v) {
                         Snackbar.make(
                             v, "Click  en el item $position",
                             Snackbar.LENGTH_LONG
                         ).setAction("Action", null).show()
                     }
+                } else {
+                val context: Context = itemView.getContext()
+                val intent = Intent(context, RealizarMatricula::class.java)
+                context.startActivity(intent)
+
                 }
 
 
             }
 
-
         }
 
 
         }
+
+
 
 
     override fun onBindViewHolder(holder: ViewHolder, i: Int) {
