@@ -16,16 +16,19 @@ import java.lang.StringBuilder
 class RealizarMatricula : AppCompatActivity() {
     var datos_Matricula: HashMap<Int, String> = hashMapOf()
     var num = 0
+    var status=""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_realizar_matricula)
 
         btn_Matricular.setOnClickListener { guardar() }
         btn_regresar2.setOnClickListener { regresar1() }
+        recibir()
+
 
         val spinnerClase = findViewById<Spinner>(R.id.spinner_C)
         val listaClases = resources.getStringArray(R.array.valoresClases)
-        val adaptador = ArrayAdapter(this,android.R.layout.simple_spinner_item,listaClases)
+        val adaptador = ArrayAdapter(this,android.R.layout.simple_spinner_item, listaClases)
         spinnerClase.adapter =adaptador
         spinnerClase.onItemSelectedListener = object:
             AdapterView.OnItemSelectedListener{
@@ -62,6 +65,14 @@ class RealizarMatricula : AppCompatActivity() {
     fun regresar1() {
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
+    }
+
+    fun recibir(){
+        val bundle = intent.extras
+        val pala = bundle?.get("studio")
+        val h = getString(R.string.txvpalabraoficial, pala)
+        txt_nCuentaMat.setText(h)
+        println(h.toString())
     }
 
 }

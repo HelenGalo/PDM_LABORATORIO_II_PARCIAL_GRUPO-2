@@ -1,6 +1,5 @@
 package hn.edu.pdm_laboratorio_prueba
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
@@ -12,7 +11,11 @@ import android.graphics.Color
 
 class MainActivity : AppCompatActivity() {
     private var layoutManager: RecyclerView.LayoutManager? = null
-    private var adapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>? = null
+    private var adapter: RecyclerAdapter = RecyclerAdapter()
+    var  data: HashMap<Int, String> = hashMapOf()
+    var status:String="false"
+    var cont:Int = 0
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,9 +27,65 @@ class MainActivity : AppCompatActivity() {
 
         layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager
+        recyclerView.adapter=adapter
 
-        adapter = RecyclerAdapter()
-        recyclerView.adapter = adapter
+
+
+
+
+        validar()
+        println("THIS IS" +status.toString())
+
+
+
+
+
+
+    }
+
+    fun validar(){
+        var tem=getVariable().toString()
+
+
+
+        var intent = intent
+        if(tem=="true"){
+            data = intent.getSerializableExtra("listado") as HashMap<Int, String>
+            println(data.toString())
+            goAlum(obt())
+        }
+
+    }
+
+
+
+    fun getVariable(): String {
+        val bundle = intent.extras
+        val pala = bundle?.get("status")
+        this.status = getString(R.string.txvpalabraoficial, pala)
+        return status
+
+    }
+
+    fun goAlum(v:String){
+
+        adapter.enviarDatos(v)
+
+
+
+
+
+    }
+
+    fun obt():String{
+        var a=""
+        var b=""
+        for(i in data){
+            val list = i.toString().split("|").toTypedArray()
+             a = list[1].toString()
+             b = list[2].toString()
+        }
+        return a
     }
 
 

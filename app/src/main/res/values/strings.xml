@@ -14,4 +14,6 @@
     <string name="REGISTRAR">registrar</string>
     <string name="Guardar">Guardar</string>
     <string name="REGRESAR">REGRESAR</string>
+    <string name="txvpalabraoficial">%s</string>
+    <string name="variables">%s</string>
 </resources>
