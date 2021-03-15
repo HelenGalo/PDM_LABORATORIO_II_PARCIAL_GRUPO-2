@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.core.view.get
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_realizar_matricula.*
 import kotlinx.android.synthetic.main.activity_registrar_alumno.*
 import java.lang.StringBuilder
@@ -16,6 +17,7 @@ import java.lang.StringBuilder
 class RealizarMatricula : AppCompatActivity() {
     var datos_Matricula: HashMap<Int, String> = hashMapOf()
     var num = 0
+    var cont:Int=0
     var status=""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +26,7 @@ class RealizarMatricula : AppCompatActivity() {
         btn_Matricular.setOnClickListener { guardar() }
         btn_regresar2.setOnClickListener { regresar1() }
         recibir()
+        inicializar()
 
 
         val spinnerClase = findViewById<Spinner>(R.id.spinner_C)
@@ -45,13 +48,16 @@ class RealizarMatricula : AppCompatActivity() {
     }
 
     private  fun guardar() {
+        cont = cont+1
         val parametro = StringBuilder()
         num += 1
-        parametro.append(txt_nCuentaMat.text.toString().trim()).append("|")
         parametro.append(txv_Seleccion.text.toString().trim()).append("|")
+        datos_Matricula.put(1, datos_Matricula.get(1)+parametro.toString())
+        if(cont>0){
+            Toast.makeText(this,"CLASE INSCRITA", Toast.LENGTH_LONG).show()
+        }
 
-        datos_Matricula.put(num, parametro.toString())
-        Toast.makeText(this, "Matricula Realizada", Toast.LENGTH_SHORT).show()
+        println(datos_Matricula.toString())
     }
 
     private fun enviar(){
@@ -68,11 +74,20 @@ class RealizarMatricula : AppCompatActivity() {
     }
 
     fun recibir(){
-        val bundle = intent.extras
-        val pala = bundle?.get("studio")
-        val h = getString(R.string.txvpalabraoficial, pala)
-        txt_nCuentaMat.setText(h)
-        println(h.toString())
+        var intent = intent
+        datos_Matricula=intent.getSerializableExtra("studio") as HashMap<Int, String>
+
+    }
+
+    fun inicializar(){
+        var a:String=""
+        for(valor in datos_Matricula) {
+            val list = valor.toString().split("|").toTypedArray()
+            a = list[1].toString()
+        }
+
+        txt_nCuentaMat.setText(a)
+
     }
 
 }

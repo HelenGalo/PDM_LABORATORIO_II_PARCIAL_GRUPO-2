@@ -67,7 +67,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun goAlum(v:String){
+    fun goAlum(v:HashMap<Int, String>){
 
         adapter.enviarDatos(v)
 
@@ -77,15 +77,9 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun obt():String{
-        var a=""
-        var b=""
-        for(i in data){
-            val list = i.toString().split("|").toTypedArray()
-             a = list[1].toString()
-             b = list[2].toString()
-        }
-        return a
+    fun obt():HashMap<Int, String>{
+
+        return data
     }
 
 

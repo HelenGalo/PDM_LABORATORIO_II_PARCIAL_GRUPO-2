@@ -10,11 +10,11 @@ import androidx.recyclerview.widget.RecyclerView
 
 
 class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
-    var paciente:String="HEY"
+    var  data: HashMap<Int, String> = hashMapOf()
 
-    fun enviarDatos(paciente: String) {
-        this.paciente = paciente
-        println("ESTO ES "+this.paciente)
+    fun enviarDatos(dat: HashMap<Int, String>) {
+        this.data = dat
+        println("ESTO ES "+this.data.toString())
 
     }
 
@@ -48,14 +48,14 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
         var itemImage: ImageView
         var itemTitle: TextView
         var itemDetail: TextView
-        var buttonPrueba: Button
+
 
 
         init {
             itemImage = itemView.findViewById(R.id.item_image)
             itemTitle = itemView.findViewById(R.id.item_title)
             itemDetail = itemView.findViewById(R.id.item_detail)
-            buttonPrueba = itemView.findViewById(R.id.buttonPrueba)
+
 
 
 
@@ -108,7 +108,7 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
     fun GoMatricula(itemView: View){
         val intent = Intent(itemView.context, RealizarMatricula::class.java)
-        intent.putExtra("studio", paciente)
+        intent.putExtra("studio", data)
         itemView.context.startActivity(intent)
 
     }
