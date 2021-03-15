@@ -31,10 +31,11 @@ class RegistrarAlumno : AppCompatActivity() {
     private  fun guardar() {
         val parametro = StringBuilder()
         num += 1
+        parametro.append("HELLO").append("|")
         parametro.append(txt_nCuentaA.text.toString().trim()).append("|")
         parametro.append(txt_NombreA.text.toString().trim()).append("|")
         parametro.append(txt_CorreoA.text.toString().trim()).append("|")
-        datos_Alumnos.put(num, parametro.toString())
+        datos_Alumnos.put(num,parametro.toString())
         println(datos_Alumnos.toString())
 
 

@@ -10,17 +10,17 @@ import androidx.recyclerview.widget.RecyclerView
 
 
 class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
-    var paciente:String="HEY"
+    var  data: HashMap<Int, String> = hashMapOf()
 
-    fun enviarDatos(paciente: String) {
-        this.paciente = paciente
-        println("ESTO ES "+this.paciente)
+    fun enviarDatos(dat: HashMap<Int, String>) {
+        this.data = dat
+        println("ESTO ES "+this.data.toString())
 
     }
 
     private val titles = arrayOf(
             "Registrar Alumno",
-             "Registrar Clase","Matricula", "Ingresar Notas",
+            "Matricula", "Registrar Clase", "Ingresar Notas",
             "Enviar Matricula", "Enviar Nota"
     )
 
@@ -51,7 +51,6 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
 
 
-
         init {
             itemImage = itemView.findViewById(R.id.item_image)
             itemTitle = itemView.findViewById(R.id.item_title)
@@ -68,8 +67,8 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
                 when(position){
                     0 -> GoRegistrarAlumno(itemView)
-                    1 -> GoRegistrarClase(itemView)
-                    2 -> GoMatricula(itemView)
+                    1 -> GoMatricula(itemView)
+                    2 -> GoRegistrarClase(itemView)
                     3 -> GoIngresarNotas(itemView)
                     4 -> GoEnviarMatricula(itemView)
                     5 -> GoEnviarNota(itemView)
@@ -109,7 +108,7 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
     fun GoMatricula(itemView: View){
         val intent = Intent(itemView.context, RealizarMatricula::class.java)
-        intent.putExtra("studio", paciente)
+        intent.putExtra("studio", data)
         itemView.context.startActivity(intent)
 
     }
