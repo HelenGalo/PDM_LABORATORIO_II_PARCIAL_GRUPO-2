@@ -109,6 +109,7 @@ class RegistrarClase : AppCompatActivity() {
     private  fun guardar() {
         val parametro = StringBuilder()
         num += 1
+        parametro.append("DATOS CLASE").append("|")
         parametro.append(txt_nCuentaA2.text.toString().trim()).append("|")
         parametro.append(spinner_N.selectedItem.toString().trim()).append("|")
         parametro.append(spinner_Sec.selectedItem.toString().trim()).append("|")
