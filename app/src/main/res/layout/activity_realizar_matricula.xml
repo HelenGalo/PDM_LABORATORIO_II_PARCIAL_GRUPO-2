@@ -9,8 +9,8 @@
 
     <Button
         android:id="@+id/btn_regresar2"
-        android:layout_width="180dp"
-        android:layout_height="65dp"
+        android:layout_width="152dp"
+        android:layout_height="61dp"
         android:background="@color/red4"
         android:foreground="@android:drawable/ic_menu_rotate"
         android:foregroundGravity="top|bottom|clip_horizontal|right"
@@ -21,10 +21,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.928"
+        app:layout_constraintHorizontal_bias="0.892"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.867" />
+        app:layout_constraintVertical_bias="0.866" />
 
     <TextView
         android:id="@+id/txv_NoClases2"
@@ -127,8 +127,8 @@
 
     <Button
         android:id="@+id/btn_Matricular"
-        android:layout_width="187dp"
-        android:layout_height="65dp"
+        android:layout_width="174dp"
+        android:layout_height="61dp"
         android:background="@color/red4"
         android:foreground="@android:drawable/ic_menu_save"
         android:foregroundGravity="top|bottom|clip_horizontal|right"

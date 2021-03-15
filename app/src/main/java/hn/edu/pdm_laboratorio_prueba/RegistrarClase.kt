@@ -8,7 +8,7 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_registrar_alumno.*
+import kotlinx.android.synthetic.main.activity_ingresar_notas.*
 import kotlinx.android.synthetic.main.activity_registrar_clase.*
 import java.lang.StringBuilder
 
@@ -21,7 +21,7 @@ class RegistrarClase : AppCompatActivity() {
         btn_regresar3.setOnClickListener { regresar3() }
         btn_RegistrarClase.setOnClickListener { guardar() }
 
-        val spinner_NClase = findViewById<Spinner>(R.id.spinner_C)
+        val spinner_NClase = findViewById<Spinner>(R.id.spinner_NCl)
         val lista_NClases = resources.getStringArray(R.array.valoresClases)
         val adaptador = ArrayAdapter(this,android.R.layout.simple_spinner_item,lista_NClases)
         spinner_NClase.adapter =adaptador
@@ -38,7 +38,7 @@ class RegistrarClase : AppCompatActivity() {
             }
         }
 
-        val spinner_Seccion = findViewById<Spinner>(R.id.spinner_C)
+        val spinner_Seccion = findViewById<Spinner>(R.id.spinner_Sec)
         val lista_Seccion = resources.getStringArray(R.array.valoresSeccion)
         val adaptadorSe = ArrayAdapter(this,android.R.layout.simple_spinner_item,lista_Seccion)
         spinner_Seccion.adapter =adaptadorSe
@@ -55,7 +55,7 @@ class RegistrarClase : AppCompatActivity() {
             }
         }
 
-        val spinner_Hora = findViewById<Spinner>(R.id.spinner_C)
+        val spinner_Hora = findViewById<Spinner>(R.id.spinner_Hora)
         val lista_Hora = resources.getStringArray(R.array.valoresHora)
         val adaptadorH = ArrayAdapter(this,android.R.layout.simple_spinner_item,lista_Hora)
         spinner_Hora.adapter =adaptadorH
@@ -71,7 +71,7 @@ class RegistrarClase : AppCompatActivity() {
                 txv_SeleccionHora.text= lista_Hora[position].toString()
             }
         }
-        val spinner_Aula = findViewById<Spinner>(R.id.spinner_C)
+        val spinner_Aula = findViewById<Spinner>(R.id.spinner_A)
         val lista_Aula = resources.getStringArray(R.array.valoresAula)
         val adaptadorAu = ArrayAdapter(this,android.R.layout.simple_spinner_item,lista_Aula)
         spinner_Aula.adapter =adaptadorAu
@@ -87,7 +87,7 @@ class RegistrarClase : AppCompatActivity() {
                 txv_SeleccionAula.text= lista_Aula[position].toString()
             }
         }
-        val spinner_Edificio = findViewById<Spinner>(R.id.spinner_C)
+        val spinner_Edificio = findViewById<Spinner>(R.id.spinner_Ed)
         val lista_Edificio = resources.getStringArray(R.array.valoresEdificio)
         val adaptadorEd = ArrayAdapter(this,android.R.layout.simple_spinner_item,lista_Edificio)
         spinner_Edificio.adapter =adaptadorEd

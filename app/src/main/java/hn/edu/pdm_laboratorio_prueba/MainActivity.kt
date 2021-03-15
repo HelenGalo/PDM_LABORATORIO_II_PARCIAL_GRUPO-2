@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager
 
-        adapter = RecyclerAdapter(applicationContext)
+        adapter = RecyclerAdapter()
         recyclerView.adapter = adapter
     }
 
