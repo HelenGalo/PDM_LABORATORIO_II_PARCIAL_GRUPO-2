@@ -15,24 +15,25 @@ class EnviarNotas:AppCompatActivity() {
         btn_regresarNota.setOnClickListener {
             regresar()
         }
+        inicializarN()
+        obtenerN()
+
     }
 
     private fun regresar(){
         val intent= Intent(this,MainActivity::class.java)
         startActivity(intent)
     }
-    private fun obtener(){
+    private fun obtenerN(){
         var intent = intent
 
         datos_nota = intent.getSerializableExtra("notas") as HashMap<Int, String>
 
-        val bundle = intent.extras
-        val pala = bundle?.get("cant")
-        this. = getString(R.string.txvpalabraoficial, pala)
+
 
 
     }
-    fun inicializar(){
+    fun inicializarN(){
 
         var c:String=""
 
