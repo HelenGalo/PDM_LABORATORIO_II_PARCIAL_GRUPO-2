@@ -108,19 +108,6 @@ class RegistrarClase : AppCompatActivity() {
         }
     }
     private  fun guardar() {
-        cont = cont + 1
-        val parametro = StringBuilder()
-        num += 1
-        parametro.append("DATOS CLASE").append("|")
-        parametro.append(txt_nCuentaA2.text.toString().trim()).append("|")
-        parametro.append(spinner_N.selectedItem.toString().trim()).append("|")
-        parametro.append(spinner_Sec.selectedItem.toString().trim()).append("|")
-        parametro.append(spinner_Aula.selectedItem.toString().trim()).append("|")
-        parametro.append(spinner_Hora.selectedItem.toString().trim()).append("|")
-        parametro.append(spinner_Edificio.selectedItem.toString().trim()).append("|")
-
-        datos_Clase.put(num, parametro.toString())
-        println(datos_Clase.toString())
         if (txt_nCuentaA2.text.toString().isEmpty()) {
             Toast.makeText(this, "Ingrese un Numero de cuenta", Toast.LENGTH_SHORT).show()
         } else {
@@ -139,6 +126,20 @@ class RegistrarClase : AppCompatActivity() {
                             if (spinner_Edificio.selectedItem.toString().isEmpty()) {
                                 Toast.makeText(this, "Ingrese un Edificio", Toast.LENGTH_SHORT).show()
                             } else {
+                                cont = cont + 1
+                                val parametro = StringBuilder()
+                                num += 1
+                                parametro.append("DATOS CLASE").append("|")
+                                parametro.append(txt_nCuentaA2.text.toString().trim()).append("|")
+                                parametro.append(spinner_N.selectedItem.toString().trim()).append("|")
+                                parametro.append(spinner_Sec.selectedItem.toString().trim()).append("|")
+                                parametro.append(spinner_Aula.selectedItem.toString().trim()).append("|")
+                                parametro.append(spinner_Hora.selectedItem.toString().trim()).append("|")
+                                parametro.append(spinner_Edificio.selectedItem.toString().trim()).append("|")
+
+                                datos_Clase.put(num, parametro.toString())
+                                println(datos_Clase.toString())
+
                                 Toast.makeText(this, "Clase  Registrada", Toast.LENGTH_SHORT).show()
                             }
 
@@ -162,7 +163,8 @@ class RegistrarClase : AppCompatActivity() {
         intent.putExtra("clases", datos_Clase)
         intent.putExtra("ESTADOCLASE","true")
         intent.putExtra("alumno",datos_Matricula)
-        intent.putExtra("cantidad",cont.toString())
+        intent.putExtra("cantidad",cont)
+        intent.putExtra("statef", "true")
         startActivity(intent)
     }
 

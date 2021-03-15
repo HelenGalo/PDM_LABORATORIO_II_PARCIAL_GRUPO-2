@@ -12,7 +12,8 @@ import androidx.recyclerview.widget.RecyclerView
 class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
     var  data: HashMap<Int, String> = hashMapOf()
     var  data_clase: HashMap<Int, String> = hashMapOf()
-    var cantidad:String=""
+    var  mF: HashMap<Int, String> = hashMapOf()
+    var cantidad:Int=0
     var nota:HashMap<Int, String> = hashMapOf()
 
     fun enviarDatos(dat: HashMap<Int, String>) {
@@ -21,14 +22,35 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
     }
 
-    fun enviarClases(dat: HashMap<Int, String>, clas:HashMap<Int,String>,noti:HashMap<Int,String> ) {
+    fun enviarClases(dat: HashMap<Int, String>, clas:HashMap<Int,String> ,h:Int) {
         this.data=dat
         this.data_clase = clas
-        this.nota= noti
+        this.cantidad=h
         println("ESTO ES "+this.data_clase.toString())
         println("ESTO ES "+this.data.toString())
-        println("ESTO ES "+this.cantidad.toString())
+
+
+    }
+    fun enviarm(dat: HashMap<Int, String>, clas:HashMap<Int,String>,c:HashMap<Int,String>){
+        this.data=dat
+        this.data_clase = clas
+        this.mF=c
+        println("ESTO ES "+this.data_clase.toString())
+        println("ESTO ES "+this.data.toString())
         println("ESTO ES "+this.nota.toString())
+        println("ESTO ES"+ cantidad.toString())
+    }
+
+
+    fun enviar_clases_notas(dat: HashMap<Int, String>, clas:HashMap<Int,String>, g:HashMap<Int,String>,c:HashMap<Int,String>){
+        this.data=dat
+        this.data_clase = clas
+        this.nota= g
+        this.mF=c
+        println("ESTO ES "+this.data_clase.toString())
+        println("ESTO ES "+this.data.toString())
+        println("ESTO ES "+this.nota.toString())
+        println("ESTO ES"+ cantidad.toString())
     }
 
     private val titles = arrayOf(
@@ -139,6 +161,9 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
     fun GoIngresarNotas(itemView: View){
         val intent = Intent(itemView.context, IngresarNotas::class.java)
+        intent.putExtra("mf", mF)
+        intent.putExtra("dalumno",data)
+        intent.putExtra("dclase",data_clase)
         itemView.context.startActivity(intent)
 
     }

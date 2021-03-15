@@ -13,10 +13,13 @@ class MainActivity : AppCompatActivity() {
     private var layoutManager: RecyclerView.LayoutManager? = null
     private var adapter: RecyclerAdapter = RecyclerAdapter()
     var  data: HashMap<Int, String> = hashMapOf()
+    var  a: HashMap<Int, String> = hashMapOf()
     var  data_clases: HashMap<Int, String> = hashMapOf()
     var status:String="false"
     var cont:Int = 0
     var estado_Clase="false"
+    var estado_nota="false"
+    var estadof="true"
     var nota:HashMap<Int, String> = hashMapOf()
 
 
@@ -59,10 +62,28 @@ class MainActivity : AppCompatActivity() {
         }
 
         var estadotem=getEstadoCLase().toString()
+        var estadof = getEstadoF().toString()
         if(estadotem=="true"){
             getClases()
-            adapter.enviarClases(data,data_clases,nota)
+            getCantidad()
+            adapter.enviarClases(data,data_clases,cont)
+
         }
+
+        if(estadof=="false"){
+            a=getMatriculaFinal()
+            adapter.enviarm(data,data_clases,a)
+
+        }
+
+        var estadoclase = getEstadoNota()
+        var statefin = getStateFin()
+        if(estadoclase=="true" && statefin=="true"){
+            getNotas()
+            adapter.enviar_clases_notas(data,data_clases,nota,a)
+
+        }
+
 
     }
 
@@ -76,6 +97,20 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    fun getMatriculaFinal(): HashMap<Int, String> {
+        var intent = intent
+        var m_Final = intent.getSerializableExtra("matriculaf") as HashMap<Int, String>
+        return m_Final
+
+    }
+
+    fun getCantidad(){
+        val bundle = intent.extras
+        val pala = bundle?.get("cantidad")
+        this.cont = getString(R.string.txvpalabraoficial, pala).toInt()
+        println("CONTADOR"+cont.toString())
+    }
+
     fun getEstadoCLase():String{
         val bundle = intent.extras
         val pala = bundle?.get("ESTADOCLASE")
@@ -83,6 +118,32 @@ class MainActivity : AppCompatActivity() {
         return estado_Clase
 
     }
+
+    fun getStateFin():String{
+        val bundle = intent.extras
+        val pala = bundle?.get("state")
+        var e = getString(R.string.txvpalabraoficial, pala)
+        return e
+
+    }
+
+    fun getEstadoF():String{
+        val bundle = intent.extras
+        val pala = bundle?.get("estadof")
+        this.estadof = getString(R.string.txvpalabraoficial, pala)
+        return estado_Clase
+
+    }
+
+
+    fun getEstadoNota():String{
+        val bundle = intent.extras
+        val pala = bundle?.get("estadonota")
+        this.estado_nota = getString(R.string.txvpalabraoficial, pala)
+        return estado_nota
+
+    }
+
 
     fun goAlum(v:HashMap<Int, String>){
 
@@ -98,11 +159,17 @@ class MainActivity : AppCompatActivity() {
         var intent = intent
         data_clases = intent.getSerializableExtra("clases") as HashMap<Int, String>
         data = intent.getSerializableExtra("alumno") as HashMap<Int, String>
-        nota = intent.getSerializableExtra("notas") as HashMap<Int, String>
+
         println("LAS CLASES SON "+data_clases.toString())
         println("El alumno es "+ data.toString())
-        println("notas "+ nota.toString())
 
+
+    }
+
+
+    fun getNotas(){
+        nota = intent.getSerializableExtra("notas") as HashMap<Int, String>
+        println("notas "+ nota.toString())
     }
 
     fun obt():HashMap<Int, String>{

@@ -19,10 +19,10 @@ import java.lang.StringBuilder
 class RealizarMatricula : AppCompatActivity() {
     var datos_Matricula: HashMap<Int, String> = hashMapOf()
     var datos_alumno: HashMap<Int, String> = hashMapOf()
+    var matricula_final: HashMap<Int, String> = hashMapOf()
     var num = 0
     var cont:Int=0
-    var cantidad:String=""
-    var status=""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_realizar_matricula)
@@ -39,23 +39,26 @@ class RealizarMatricula : AppCompatActivity() {
 
     private  fun guardar() {
 
-        if(cont>0){
-            Toast.makeText(this,"CLASE INSCRITA", Toast.LENGTH_LONG).show()
-        }
 
-        println(datos_Matricula.toString())
-        var to = arrayOf<String>("edwin.espino@ujcv.edu.hn", "helen.orellana1@ujcv.edu.hn")
-        val intent = Intent(Intent.ACTION_SEND)
-        intent.putExtra(Intent.EXTRA_EMAIL,to)
-        intent.putExtra(Intent.EXTRA_SUBJECT, "MATRICULA")
-        intent.putExtra(Intent.EXTRA_TEXT, datos_Matricula.toString()+" "+datos_alumno.toString())
-        intent.setType("message/rfc822");
-        startActivity(Intent.createChooser(intent, "Email"))
+
+
 
         if (txt_nCuentaMat.text.toString().isEmpty()) {
             Toast.makeText(this, "Ingrese el Numero de cuenta", Toast.LENGTH_SHORT).show()
         }else{
-            Toast.makeText(this, "Matricula realizada con Exito!", Toast.LENGTH_SHORT).show()
+            if(cont>0){
+                val parametro = StringBuilder()
+                num += 1
+                parametro.append("DATOS ALUMNOS-CLASE").append("|")
+                parametro.append(datos_Matricula.toString().trim()).append("|")
+                parametro.append(datos_alumno.toString().trim()).append("|")
+                matricula_final.put(num,parametro.toString())
+                println(matricula_final.toString())
+                Toast.makeText(this, "Matricula realizada con Exito!", Toast.LENGTH_SHORT).show()
+
+
+            }
+
         }
 
 
@@ -66,9 +69,7 @@ class RealizarMatricula : AppCompatActivity() {
          datos_alumno= intent.getSerializableExtra("clases") as HashMap<Int, String>
         datos_Matricula= intent.getSerializableExtra("alumno") as HashMap<Int, String>
 
-        val bundle = intent.extras
-        val pala = bundle?.get("cant")
-        this.cantidad = getString(R.string.txvpalabraoficial, pala)
+
 
 
     }
@@ -77,25 +78,28 @@ class RealizarMatricula : AppCompatActivity() {
 
     fun regresar1() {
         val intent = Intent(this, MainActivity::class.java)
+        intent.putExtra("estadof", "false")
+        intent.putExtra("matriculaf", matricula_final)
         startActivity(intent)
     }
 
 
 
     fun inicializar(){
+        val bundle = intent.extras
+        val pala = bundle?.get("cant")
+        this.cont = getString(R.string.txvpalabraoficial, pala).toInt()
+        println(cont.toString())
+
         var a:String=""
         var b:String=""
         var c:Int=0
+        for (valor in datos_alumno) {
+            val list = valor.toString().split("|").toTypedArray()
+            b =b+list[2].toString()+" "
 
 
-
-
-            for (valor in datos_alumno) {
-                val list = valor.toString().split("|").toTypedArray()
-                b =b+list[2].toString()+" "
-
-
-            }
+        }
 
 
         for (valor in datos_Matricula) {

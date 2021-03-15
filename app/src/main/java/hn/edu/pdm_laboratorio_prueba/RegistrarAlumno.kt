@@ -30,14 +30,6 @@ class RegistrarAlumno : AppCompatActivity() {
 
 
     private  fun guardar() {
-        val parametro = StringBuilder()
-        num += 1
-        parametro.append("DATOS ALUMNOS").append("|")
-        parametro.append(txt_nCuentaA.text.toString().trim()).append("|")
-        parametro.append(txt_NombreA.text.toString().trim()).append("|")
-        parametro.append(txt_CorreoA.text.toString().trim()).append("|")
-        datos_Alumnos.put(num,parametro.toString())
-        println(datos_Alumnos.toString())
 
         if (txt_nCuentaA.text.toString().isEmpty()) {
             Toast.makeText(this, "Debe de ingresar un Numero de cuenta", Toast.LENGTH_SHORT).show()
@@ -49,6 +41,15 @@ class RegistrarAlumno : AppCompatActivity() {
                     Toast.makeText(this, "Ingrese un Correo", Toast.LENGTH_SHORT).show()
                 }else{
                     Toast.makeText(this, "Alumno  Registrado", Toast.LENGTH_SHORT).show()
+                    val parametro = StringBuilder()
+                    num += 1
+                    parametro.append("DATOS ALUMNOS").append("|")
+                    parametro.append(txt_nCuentaA.text.toString().trim()).append("|")
+                    parametro.append(txt_NombreA.text.toString().trim()).append("|")
+                    parametro.append(txt_CorreoA.text.toString().trim()).append("|")
+                    datos_Alumnos.put(num,parametro.toString())
+                    println(datos_Alumnos.toString())
+
                 }
 
             }
@@ -56,11 +57,7 @@ class RegistrarAlumno : AppCompatActivity() {
 
     }
 
-    private fun enviar(){
-        val intent = Intent(this, EnviarMatricula ::class.java)
-        intent.putExtra("listado", datos_Alumnos)
-        startActivity(intent)
-    }
+
 
     fun regresar() {
         var status:String = "true"

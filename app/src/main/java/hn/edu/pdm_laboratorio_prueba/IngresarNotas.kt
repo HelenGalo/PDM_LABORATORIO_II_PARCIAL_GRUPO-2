@@ -84,6 +84,9 @@ class IngresarNotas : AppCompatActivity() {
             intent.putExtra("ESTADOCLASE","true")
             intent.putExtra("alumno",datos_Matricula)
             intent.putExtra("notas",datos_nota)
+        intent.putExtra("estadonota", "true")
+        intent.putExtra("state", "true")
+
             startActivity(intent)
         }
 
