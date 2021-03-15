@@ -45,6 +45,7 @@ class RealizarMatricula : AppCompatActivity() {
     }
 
     private  fun guardar() {
+
         val parametro = StringBuilder()
         num += 1
         parametro.append(txt_nCuentaMat.text.toString().trim()).append("|")

@@ -9,42 +9,43 @@
 
     <Button
         android:id="@+id/btn_regresar3"
-        android:layout_width="152dp"
-        android:layout_height="81dp"
-        android:layout_marginBottom="44dp"
+        android:layout_width="123dp"
+        android:layout_height="74dp"
         android:background="@color/red4"
         android:foreground="@android:drawable/ic_menu_rotate"
         android:foregroundGravity="top|bottom|clip_horizontal|right"
         android:freezesText="false"
         android:text="@string/REGRESAR"
         android:textAlignment="center"
-        android:textSize="18sp"
+        android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.83"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.843"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.945" />
 
     <TextView
         android:id="@+id/txv_SeleccionAula"
-        android:layout_width="130dp"
-        android:layout_height="39dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:fontFamily="sans-serif"
         android:gravity="center"
         android:text="@string/seleccion"
         android:textColor="@color/black"
-        android:textSize="17sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.843"
+        app:layout_constraintHorizontal_bias="0.811"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.602" />
 
     <TextView
         android:id="@+id/txv_SeleccionSeccion"
-        android:layout_width="130dp"
-        android:layout_height="39dp"
+        android:layout_width="115dp"
+        android:layout_height="24dp"
         android:fontFamily="sans-serif"
         android:gravity="center"
         android:text="@string/seleccion"
@@ -52,31 +53,15 @@
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.206"
+        app:layout_constraintHorizontal_bias="0.212"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.559" />
-
-    <TextView
-        android:id="@+id/txv_SeleccionHora"
-        android:layout_width="130dp"
-        android:layout_height="39dp"
-        android:fontFamily="sans-serif"
-        android:gravity="center"
-        android:text="@string/seleccion"
-        android:textColor="@color/black"
-        android:textSize="17sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.188"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.725" />
+        app:layout_constraintVertical_bias="0.597" />
 
     <TextView
         android:id="@+id/txv_SeleccionEdificio"
-        android:layout_width="130dp"
-        android:layout_height="39dp"
+        android:layout_width="132dp"
+        android:layout_height="28dp"
         android:fontFamily="sans-serif"
         android:gravity="center"
         android:text="@string/seleccion"
@@ -84,15 +69,15 @@
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.843"
+        app:layout_constraintHorizontal_bias="0.838"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.729" />
+        app:layout_constraintVertical_bias="0.8" />
 
     <TextView
         android:id="@+id/txv_SeleccionClase"
-        android:layout_width="231dp"
-        android:layout_height="32dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:fontFamily="sans-serif"
         android:gravity="center"
         android:text="@string/seleccion"
@@ -100,14 +85,14 @@
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.561"
+        app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.449" />
+        app:layout_constraintVertical_bias="0.427" />
 
     <Spinner
         android:id="@+id/spinner_N"
-        android:layout_width="300dp"
+        android:layout_width="291dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="@color/gray1"
@@ -115,15 +100,14 @@
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.522"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.369" />
+        app:layout_constraintVertical_bias="0.345" />
 
     <Button
         android:id="@+id/btn_RegistrarClase"
-        android:layout_width="167dp"
-        android:layout_height="87dp"
+        android:layout_width="123dp"
+        android:layout_height="74dp"
         android:background="@color/red4"
         android:foreground="@android:drawable/ic_menu_add"
         android:foregroundGravity="top|bottom|clip_horizontal|right"
@@ -132,49 +116,17 @@
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintHorizontal_bias="0.163"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.927" />
+        app:layout_constraintVertical_bias="0.947" />
 
     <Spinner
         android:id="@+id/spinner_Edificio"
         android:layout_width="153dp"
-        android:layout_height="42dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="@color/white"
-        android:padding="20dp"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.882"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.728" />
-
-    <Spinner
-        android:id="@+id/spinner_Hora"
-        android:layout_width="153dp"
-        android:layout_height="42dp"
-        android:layout_gravity="center"
-        android:background="@color/white"
-        android:padding="20dp"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.17"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.728" />
-
-    <Spinner
-        android:id="@+id/spinner_Aula"
-        android:layout_width="153dp"
-        android:layout_height="42dp"
-        android:layout_gravity="center"
-        android:background="@color/white"
+        android:background="@color/gray1"
         android:padding="20dp"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -182,35 +134,66 @@
         app:layout_constraintHorizontal_bias="0.864"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.561" />
+        app:layout_constraintVertical_bias="0.721" />
 
     <Spinner
-        android:id="@+id/spinner_Seccion"
+        android:id="@+id/spinner_Hora"
         android:layout_width="153dp"
-        android:layout_height="42dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="@color/white"
+        android:background="@color/gray1"
         android:padding="20dp"
+        android:textAlignment="center"
         android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.209"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.719" />
+
+    <Spinner
+        android:id="@+id/spinner_Aula"
+        android:layout_width="153dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/gray1"
+        android:padding="20dp"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.17"
+        app:layout_constraintHorizontal_bias="0.864"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.561" />
+        app:layout_constraintVertical_bias="0.529" />
+
+    <Spinner
+        android:id="@+id/spinner_Sec"
+        android:layout_width="147dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/gray1"
+        android:padding="20dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.205"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.529" />
+
     <EditText
         android:id="@+id/txt_nCuentaA2"
-        android:layout_width="309dp"
-        android:layout_height="50dp"
+        android:layout_width="313dp"
+        android:layout_height="39dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.431"
+        app:layout_constraintHorizontal_bias="0.418"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.211" />
+        app:layout_constraintVertical_bias="0.191" />
 
     <TextView
         android:id="@+id/txv_NombreC"
@@ -218,12 +201,13 @@
         android:layout_height="wrap_content"
         android:text="NOMBRE CLASE:"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textSize="20dp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.299" />
+        app:layout_constraintVertical_bias="0.279" />
 
     <TextView
         android:id="@+id/txv_CodigoC"
@@ -231,13 +215,13 @@
         android:layout_height="wrap_content"
         android:text="CODIGO CLASE:"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textSize="20dp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.166" />
+        app:layout_constraintVertical_bias="0.126" />
 
     <TextView
         android:id="@+id/txv_Seccion"
@@ -245,12 +229,13 @@
         android:layout_height="wrap_content"
         android:text="SECCION:"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textSize="20dp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.235"
+        app:layout_constraintHorizontal_bias="0.213"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.443" />
 
     <TextView
         android:id="@+id/txv_Hora"
@@ -258,13 +243,13 @@
         android:layout_height="wrap_content"
         android:text="HORA:"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textSize="20dp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.252"
+        app:layout_constraintHorizontal_bias="0.267"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.659" />
+        app:layout_constraintVertical_bias="0.651" />
 
     <TextView
         android:id="@+id/txv_Aula"
@@ -272,12 +257,13 @@
         android:layout_height="wrap_content"
         android:text="AULA:"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textSize="20dp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.755"
+        app:layout_constraintHorizontal_bias="0.787"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.445" />
 
     <TextView
         android:id="@+id/txv_Edificio"
@@ -285,13 +271,13 @@
         android:layout_height="wrap_content"
         android:text="EDIFICIO/PISO:"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textSize="20dp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.869"
+        app:layout_constraintHorizontal_bias="0.878"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.659" />
+        app:layout_constraintVertical_bias="0.651" />
 
     <TextView
         android:id="@+id/txv_TituloC"
@@ -302,9 +288,9 @@
         android:textSize="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.608"
+        app:layout_constraintHorizontal_bias="0.568"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.071" />
+        app:layout_constraintVertical_bias="0.028" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

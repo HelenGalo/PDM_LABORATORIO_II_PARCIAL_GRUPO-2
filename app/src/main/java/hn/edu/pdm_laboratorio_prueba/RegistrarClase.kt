@@ -38,7 +38,7 @@ class RegistrarClase : AppCompatActivity() {
             }
         }
 
-        val spinner_Seccion = findViewById<Spinner>(R.id.spinner_Seccion)
+        val spinner_Seccion = findViewById<Spinner>(R.id.spinner_Sec)
         val lista_Seccion = resources.getStringArray(R.array.valoresSeccion)
         val adaptadorSe = ArrayAdapter(this,android.R.layout.simple_spinner_item,lista_Seccion)
         spinner_Seccion.adapter =adaptadorSe
@@ -62,13 +62,13 @@ class RegistrarClase : AppCompatActivity() {
         spinner_Hora.onItemSelectedListener = object:
             AdapterView.OnItemSelectedListener{
             override fun onNothingSelected(parent: AdapterView<*>?) {
-                txv_SeleccionHora.text= "Seleccione una opcion"
+
             }
 
             override fun onItemSelected(
                 parent: AdapterView<*>?, view: View?, position: Int, id: Long
             ) {
-                txv_SeleccionHora.text= lista_Hora[position].toString()
+
             }
         }
         val spinner_Aula = findViewById<Spinner>(R.id.spinner_Aula)
@@ -110,7 +110,7 @@ class RegistrarClase : AppCompatActivity() {
         parametro.append(txt_nCuentaA2.text.toString().trim()).append("|")
         parametro.append(txv_SeleccionClase.text.toString().trim()).append("|")
         parametro.append(txv_SeleccionSeccion.text.toString().trim()).append("|")
-        parametro.append(txv_SeleccionHora.text.toString().trim()).append("|")
+
         parametro.append(txv_SeleccionEdificio.text.toString().trim()).append("|")
         parametro.append(txv_SeleccionAula.text.toString().trim()).append("|")
         datos_Clase.put(num, parametro.toString())
