@@ -11,9 +11,10 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="Ingresar">Ingresar</string>
     <string name="seleccion">seleccion</string>
-    <string name="REGISTRAR">registrar</string>
+    <string name="REGISTRAR">PORTAL UJCV - REGISTRAR</string>
     <string name="Guardar">Guardar</string>
     <string name="REGRESAR">REGRESAR</string>
+    <string name="agregar">REGISTRAR</string>
     <string name="txvpalabraoficial">%s</string>
     <string name="variables">%s</string>
     <string name="SALIR">SALIDA</string>
