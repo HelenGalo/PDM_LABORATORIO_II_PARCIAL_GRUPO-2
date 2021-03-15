@@ -69,7 +69,7 @@ class IngresarNotas : AppCompatActivity() {
                 if(txt_Nota.text.toString().isEmpty()){
                     Toast.makeText(this, "Ingrese una nota", Toast.LENGTH_SHORT).show()
                 }else{
-                    Toast.makeText(this, "Nota Registrado!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Nota Registrada!", Toast.LENGTH_SHORT).show()
                 }
 
             }
