@@ -41,6 +41,9 @@ class IngresarNotas : AppCompatActivity() {
 
     }
 
+
+
+
     private  fun guardar() {
         val parametro = StringBuilder()
         num += 1
