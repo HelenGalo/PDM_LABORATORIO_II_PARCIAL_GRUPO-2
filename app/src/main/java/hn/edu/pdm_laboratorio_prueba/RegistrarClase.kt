@@ -14,12 +14,14 @@ import java.lang.StringBuilder
 
 class RegistrarClase : AppCompatActivity() {
     var datos_Clase: HashMap<Int, String> = hashMapOf()
+    var datos_Matricula: HashMap<Int, String> = hashMapOf()
     var num = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registrar_clase)
         btn_regresar3.setOnClickListener { regresar3() }
         btn_RegistrarClase.setOnClickListener { guardar() }
+        recibir()
 
         val spinner_NClase = findViewById<Spinner>(R.id.spinner_N)
         val lista_NClases = resources.getStringArray(R.array.valoresClases)
@@ -108,8 +110,14 @@ class RegistrarClase : AppCompatActivity() {
         val parametro = StringBuilder()
         num += 1
         parametro.append(txt_nCuentaA2.text.toString().trim()).append("|")
+        parametro.append(spinner_N.selectedItem.toString().trim()).append("|")
+        parametro.append(spinner_Sec.selectedItem.toString().trim()).append("|")
+        parametro.append(spinner_Aula.selectedItem.toString().trim()).append("|")
+        parametro.append(spinner_Hora.selectedItem.toString().trim()).append("|")
+        parametro.append(spinner_Edificio.selectedItem.toString().trim()).append("|")
 
         datos_Clase.put(num, parametro.toString())
+        println(datos_Clase.toString())
         Toast.makeText(this, "Clase guardada", Toast.LENGTH_SHORT).show()
 
     }
@@ -122,7 +130,16 @@ class RegistrarClase : AppCompatActivity() {
 
     fun regresar3() {
         val intent = Intent(this, MainActivity::class.java)
+        intent.putExtra("clases", datos_Clase)
+        intent.putExtra("ESTADOCLASE","true")
+        intent.putExtra("alumno",datos_Matricula)
         startActivity(intent)
+    }
+
+    fun recibir(){
+        var intent = intent
+        datos_Matricula=intent.getSerializableExtra("studio") as HashMap<Int, String>
+
     }
 
 }

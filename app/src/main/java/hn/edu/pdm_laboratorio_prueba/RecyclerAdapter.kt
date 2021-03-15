@@ -11,10 +11,17 @@ import androidx.recyclerview.widget.RecyclerView
 
 class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
     var  data: HashMap<Int, String> = hashMapOf()
+    var  data_clase: HashMap<Int, String> = hashMapOf()
 
     fun enviarDatos(dat: HashMap<Int, String>) {
         this.data = dat
         println("ESTO ES "+this.data.toString())
+
+    }
+
+    fun enviarClases(dat: HashMap<Int, String>) {
+        this.data_clase = dat
+        println("ESTO ES "+this.data_clase.toString())
 
     }
 
@@ -108,7 +115,7 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
     fun GoMatricula(itemView: View){
         val intent = Intent(itemView.context, RealizarMatricula::class.java)
-        intent.putExtra("studio", data)
+
         itemView.context.startActivity(intent)
 
     }
@@ -129,6 +136,7 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
     fun GoRegistrarClase(itemView: View){
         val intent = Intent(itemView.context, RegistrarClase::class.java)
+        intent.putExtra("studio", data)
         itemView.context.startActivity(intent)
 
     }

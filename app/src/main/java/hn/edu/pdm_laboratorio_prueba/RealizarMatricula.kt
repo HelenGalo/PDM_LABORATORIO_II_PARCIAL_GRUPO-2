@@ -25,7 +25,7 @@ class RealizarMatricula : AppCompatActivity() {
 
         btn_Matricular.setOnClickListener { guardar() }
         btn_regresar2.setOnClickListener { regresar1() }
-        recibir()
+
         inicializar()
 
 
@@ -73,11 +73,7 @@ class RealizarMatricula : AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun recibir(){
-        var intent = intent
-        datos_Matricula=intent.getSerializableExtra("studio") as HashMap<Int, String>
 
-    }
 
     fun inicializar(){
         var a:String=""

@@ -13,8 +13,10 @@ class MainActivity : AppCompatActivity() {
     private var layoutManager: RecyclerView.LayoutManager? = null
     private var adapter: RecyclerAdapter = RecyclerAdapter()
     var  data: HashMap<Int, String> = hashMapOf()
+    var  data_clases: HashMap<Int, String> = hashMapOf()
     var status:String="false"
     var cont:Int = 0
+    var estado_Clase="false"
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -55,6 +57,11 @@ class MainActivity : AppCompatActivity() {
             goAlum(obt())
         }
 
+        var estadotem=getEstadoCLase().toString()
+        if(estadotem=="true"){
+            getClases()
+        }
+
     }
 
 
@@ -67,6 +74,14 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    fun getEstadoCLase():String{
+        val bundle = intent.extras
+        val pala = bundle?.get("ESTADOCLASE")
+        this.estado_Clase = getString(R.string.txvpalabraoficial, pala)
+        return estado_Clase
+
+    }
+
     fun goAlum(v:HashMap<Int, String>){
 
         adapter.enviarDatos(v)
@@ -74,6 +89,15 @@ class MainActivity : AppCompatActivity() {
 
 
 
+
+    }
+
+    fun getClases(){
+        var intent = intent
+        data_clases = intent.getSerializableExtra("clases") as HashMap<Int, String>
+        data = intent.getSerializableExtra("alumno") as HashMap<Int, String>
+        println("LAS CLASES SON "+data_clases.toString())
+        println("El alumno es "+ data.toString())
 
     }
 
