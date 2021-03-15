@@ -48,7 +48,7 @@ class RegistrarAlumno : AppCompatActivity() {
                 if(txt_CorreoA.text.toString().isEmpty()){
                     Toast.makeText(this, "Ingrese un Correo", Toast.LENGTH_SHORT).show()
                 }else{
-                    Toast.makeText(this, "Nota Agregada", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Alumno  Registrado", Toast.LENGTH_SHORT).show()
                 }
 
             }

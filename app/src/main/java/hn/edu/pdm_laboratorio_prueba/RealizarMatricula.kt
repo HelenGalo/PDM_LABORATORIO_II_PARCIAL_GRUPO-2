@@ -65,12 +65,20 @@ class RealizarMatricula : AppCompatActivity() {
 
     fun inicializar(){
         var a:String=""
+        var b:String=""
         for(valor in datos_Matricula) {
             val list = valor.toString().split("|").toTypedArray()
             a = list[1].toString()
+
+        }
+        for(valor in datos_alumno) {
+            val list = valor.toString().split("|").toTypedArray()
+            b = list[2].toString()
+
         }
 
         txt_nCuentaMat.setText(a)
+        txv_Seleccion.setText(b)
 
     }
 

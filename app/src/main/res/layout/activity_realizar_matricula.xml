@@ -22,24 +22,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.551"
+        app:layout_constraintHorizontal_bias="0.908"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.981" />
-
-    <TextView
-        android:id="@+id/txv_NoClases2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SELECCIONE LAS  CLASES:"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.466"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.46" />
+        app:layout_constraintVertical_bias="0.869" />
 
     <EditText
         android:id="@+id/txt_nCuentaMat"
@@ -62,16 +48,16 @@
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.295" />
+        app:layout_constraintVertical_bias="0.274" />
 
     <TextView
         android:id="@+id/txv_NoClases"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SELECCIONE LAS  CLASES:"
+        android:text=" CLASES:"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -110,7 +96,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.569" />
+        app:layout_constraintVertical_bias="0.582" />
 
     <Button
         android:id="@+id/btn_Matricular"
@@ -124,25 +110,9 @@
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.071"
+        app:layout_constraintHorizontal_bias="0.156"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.867" />
-
-    <Button
-        android:id="@+id/btnEnviar"
-        android:layout_width="129dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="244dp"
-        android:background="@color/red4"
-        android:foreground="@android:drawable/ic_menu_send"
-        android:foregroundGravity="top|bottom|clip_horizontal|right"
-        android:text="Enviar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.071"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.867" />
+        app:layout_constraintVertical_bias="0.863" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

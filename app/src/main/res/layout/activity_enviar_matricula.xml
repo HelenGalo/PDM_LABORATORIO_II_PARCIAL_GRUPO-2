@@ -41,10 +41,10 @@
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.905"
+        app:layout_constraintHorizontal_bias="0.91"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.259" />
+        app:layout_constraintVertical_bias="0.277" />
 
     <TextView
         android:id="@+id/txv_AULA"
@@ -79,7 +79,7 @@
         android:id="@+id/txv_NombreCl"
         android:layout_width="149dp"
         android:layout_height="40dp"
-        android:text="NOMBRE CLASE:"
+        android:text="CLASE INSCRIPTAS:"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -159,7 +159,7 @@
         android:id="@+id/txv_TituloEM"
         android:layout_width="290dp"
         android:layout_height="69dp"
-        android:text="ENVIAR MATRICULA EXITOSO"
+        android:text="ENVIO DE  MATRICULA EXITOSO"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textSize="28dp"
