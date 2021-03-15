@@ -3,6 +3,7 @@ package hn.edu.pdm_laboratorio_prueba
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.InputType
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -33,6 +34,7 @@ class RealizarMatricula : AppCompatActivity() {
 
         inicializar()
 
+        txt_nCuentaMat.setRawInputType(InputType.TYPE_NULL)
 
         }
 
