@@ -116,9 +116,10 @@
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.707" />
+        app:layout_constraintVertical_bias="0.69" />
 
     <TextView
         android:id="@+id/txv_CuentaA2"
@@ -138,7 +139,6 @@
         android:id="@+id/btn_IngresarNota"
         android:layout_width="154dp"
         android:layout_height="77dp"
-        android:layout_marginBottom="28dp"
         android:background="@color/red4"
         android:foreground="@android:drawable/ic_input_get"
         android:foregroundGravity="top|bottom|clip_horizontal|right"
@@ -147,8 +147,10 @@
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.14"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.164"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.943" />
 
     <TextView
         android:id="@+id/txv_TituloIN"
