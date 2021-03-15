@@ -22,7 +22,7 @@ class EnviarMatricula:AppCompatActivity() {
             regresar()
 
         }
-        btn_regresarE2.setOnClickListener {
+        btn_salir2.setOnClickListener {
             Salir()
         }
 

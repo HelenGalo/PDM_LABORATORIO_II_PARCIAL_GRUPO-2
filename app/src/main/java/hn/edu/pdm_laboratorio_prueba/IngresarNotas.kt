@@ -35,12 +35,12 @@ class IngresarNotas : AppCompatActivity() {
         spinnerClaseN.onItemSelectedListener = object:
             AdapterView.OnItemSelectedListener{
             override fun onNothingSelected(parent: AdapterView<*>?) {
-                txv_SelecNomClaseIN.text = "Seleccione una opcion"
+
             }
 
             override fun onItemSelected(
                 parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                txv_SelecNomClaseIN.text= listaClases[position].toString()
+
             }
         }
 
