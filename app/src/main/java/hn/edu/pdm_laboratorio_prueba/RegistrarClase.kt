@@ -110,8 +110,11 @@ class RegistrarClase : AppCompatActivity() {
         parametro.append(txt_nCuentaA2.text.toString().trim()).append("|")
 
         datos_Clase.put(num, parametro.toString())
-        Toast.makeText(this, "Clase guardada", Toast.LENGTH_SHORT).show()
-
+        if(txt_nCuentaA2.text.toString().isEmpty())
+            Toast.makeText(this, "Ingrese un codigo de clase", Toast.LENGTH_SHORT).show()
+        else {
+            Toast.makeText(this, "Clase guardada", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun enviar(){

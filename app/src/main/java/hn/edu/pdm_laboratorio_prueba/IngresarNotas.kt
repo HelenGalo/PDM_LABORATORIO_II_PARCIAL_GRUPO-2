@@ -53,7 +53,21 @@ class IngresarNotas : AppCompatActivity() {
         parametro.append(txv_SelecNomClaseIN.text.toString().trim()).append("|")
 
         datos_nota.put(num, parametro.toString())
-        Toast.makeText(this, "Nota Agregada", Toast.LENGTH_SHORT).show()
+
+        if (txt_nCuentaA3.text.toString().isEmpty()) {
+            Toast.makeText(this, "Debe de ingresar un Numero de cuenta", Toast.LENGTH_SHORT).show()
+        }else {
+            if (txt_NombreA2.text.toString().isEmpty()) {
+                Toast.makeText(this, "Debe de ingresar un Nombre", Toast.LENGTH_SHORT).show()
+            } else {
+                if(txt_Nota.text.toString().isEmpty()){
+                    Toast.makeText(this, "Ingrese una nota", Toast.LENGTH_SHORT).show()
+                }else{
+                    Toast.makeText(this, "Nota Agregada", Toast.LENGTH_SHORT).show()
+                }
+
+            }
+        }
     }
 
     private fun regresar(){
