@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
         var estadotem=getEstadoCLase().toString()
         if(estadotem=="true"){
             getClases()
-            adapter.enviarClases(data,data_clases)
+            adapter.enviarClases(data,data_clases,nota)
         }
 
     }

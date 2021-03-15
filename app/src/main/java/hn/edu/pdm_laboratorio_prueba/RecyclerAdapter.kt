@@ -13,6 +13,7 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
     var  data: HashMap<Int, String> = hashMapOf()
     var  data_clase: HashMap<Int, String> = hashMapOf()
     var cantidad:String=""
+    var nota:HashMap<Int, String> = hashMapOf()
 
     fun enviarDatos(dat: HashMap<Int, String>) {
         this.data = dat
@@ -20,14 +21,14 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
     }
 
-    fun enviarClases(dat: HashMap<Int, String>, clas:HashMap<Int,String>, cantidad:String) {
+    fun enviarClases(dat: HashMap<Int, String>, clas:HashMap<Int,String>,noti:HashMap<Int,String> ) {
         this.data=dat
         this.data_clase = clas
-        this.cantidad = cantidad
+        this.nota= noti
         println("ESTO ES "+this.data_clase.toString())
         println("ESTO ES "+this.data.toString())
         println("ESTO ES "+this.cantidad.toString())
-
+        println("ESTO ES "+this.nota.toString())
     }
 
     private val titles = arrayOf(
