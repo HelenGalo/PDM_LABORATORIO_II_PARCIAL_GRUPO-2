@@ -9,22 +9,23 @@
 
     <Button
         android:id="@+id/btn_regresar2"
-        android:layout_width="152dp"
-        android:layout_height="61dp"
+        android:layout_width="139dp"
+        android:layout_height="50dp"
         android:background="@color/red4"
         android:foreground="@android:drawable/ic_menu_rotate"
         android:foregroundGravity="top|bottom|clip_horizontal|right"
         android:freezesText="false"
+        android:gravity="center|center_horizontal|left"
         android:text="@string/REGRESAR"
         android:textAlignment="center"
-        android:textSize="18sp"
+        android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.892"
+        app:layout_constraintHorizontal_bias="0.551"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.866" />
+        app:layout_constraintVertical_bias="0.981" />
 
     <TextView
         android:id="@+id/txv_NoClases2"
@@ -127,14 +128,30 @@
 
     <Button
         android:id="@+id/btn_Matricular"
-        android:layout_width="174dp"
-        android:layout_height="61dp"
+        android:layout_width="129dp"
+        android:layout_height="45dp"
         android:background="@color/red4"
         android:foreground="@android:drawable/ic_menu_save"
         android:foregroundGravity="top|bottom|clip_horizontal|right"
         android:freezesText="false"
         android:text="@string/Guardar"
         android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.071"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.867" />
+
+    <Button
+        android:id="@+id/btnEnviar"
+        android:layout_width="129dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="244dp"
+        android:background="@color/red4"
+        android:foreground="@android:drawable/ic_menu_send"
+        android:foregroundGravity="top|bottom|clip_horizontal|right"
+        android:text="Enviar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.071"

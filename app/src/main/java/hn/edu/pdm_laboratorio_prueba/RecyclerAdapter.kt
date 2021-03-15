@@ -20,7 +20,7 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
     private val titles = arrayOf(
             "Registrar Alumno",
-            "Matricula", "Registrar Clase", "Ingresar Notas",
+             "Registrar Clase","Matricula", "Ingresar Notas",
             "Enviar Matricula", "Enviar Nota"
     )
 
@@ -48,14 +48,15 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
         var itemImage: ImageView
         var itemTitle: TextView
         var itemDetail: TextView
-        var buttonPrueba: Button
+
+
 
 
         init {
             itemImage = itemView.findViewById(R.id.item_image)
             itemTitle = itemView.findViewById(R.id.item_title)
             itemDetail = itemView.findViewById(R.id.item_detail)
-            buttonPrueba = itemView.findViewById(R.id.buttonPrueba)
+
 
 
 
@@ -67,8 +68,8 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
                 when(position){
                     0 -> GoRegistrarAlumno(itemView)
-                    1 -> GoMatricula(itemView)
-                    2 -> GoRegistrarClase(itemView)
+                    1 -> GoRegistrarClase(itemView)
+                    2 -> GoMatricula(itemView)
                     3 -> GoIngresarNotas(itemView)
                     4 -> GoEnviarMatricula(itemView)
                     5 -> GoEnviarNota(itemView)
