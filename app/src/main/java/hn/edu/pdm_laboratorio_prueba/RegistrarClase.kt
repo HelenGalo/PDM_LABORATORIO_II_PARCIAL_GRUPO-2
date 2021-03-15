@@ -125,7 +125,7 @@ class RegistrarClase : AppCompatActivity() {
     }
 
     fun regresar3() {
-        val intent = Intent(this, RecyclerAdapter::class.java)
+        val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
     }
 

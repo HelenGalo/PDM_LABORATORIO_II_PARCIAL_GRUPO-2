@@ -20,6 +20,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".RegistrarAlumno"
+            android:label="@string/REGISTRAR">
+
+        </activity>
+
+
+        <activity android:name=".IngresarNotas">
+
+        </activity>
+        <activity android:name=".RegistrarClase">
+
+        </activity>
+        <activity android:name=".EnviarMatricula"></activity>
+        <activity android:name=".EnviarNotas"></activity>
+
+
     </application>
 
 </manifest>

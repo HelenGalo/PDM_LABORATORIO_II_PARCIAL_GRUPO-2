@@ -60,7 +60,7 @@ class RealizarMatricula : AppCompatActivity() {
 
 
     fun regresar1() {
-        val intent = Intent(this, RecyclerAdapter::class.java)
+        val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
     }
 

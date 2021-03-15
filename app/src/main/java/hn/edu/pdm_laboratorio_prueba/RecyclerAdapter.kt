@@ -12,6 +12,7 @@ import com.google.android.material.snackbar.Snackbar
 
 class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
+
     private val titles = arrayOf(
         "Registrar Alumno",
         "Matricula", "Registrar Clase", "Ingresar Notas",
@@ -38,6 +39,10 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
         return ViewHolder(v)
     }
 
+
+
+
+
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var itemImage: ImageView
         var itemTitle: TextView
@@ -50,28 +55,71 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
             itemDetail = itemView.findViewById(R.id.item_detail)
 
             itemView.setOnClickListener { v: View? ->
-                var position: Int = getAdapterPosition()
-                if (v == null) {
-                    if (v != v) {
-                        Snackbar.make(
-                            v, "Click  en el item $position",
-                            Snackbar.LENGTH_LONG
-                        ).setAction("Action", null).show()
-                    }
-                } else {
-
-                    val context1: Context = itemView.getContext()
-                    val intent = Intent(context1, RealizarMatricula::class.java)
-                    context1.startActivity(intent)
-
+                var position:Int = getAdapterPosition()
+                println(position.toString())
+                when(position){
+                    0->GoRegistrarAlumno(itemView)
+                    1->GoMatricula(itemView)
+                    2->GoRegistrarClase(itemView)
+                    3->GoIngresarNotas(itemView)
+                    4->GoEnviarMatricula(itemView)
+                    5->GoEnviarNota(itemView)
+                    else-> GoMain(itemView)
 
                 }
+
+
+
 
 
             }
 
 
         }
+
+
+    }
+
+    private fun GoMain(itemView: View){
+        val intent = Intent(itemView.context,MainActivity::class.java)
+        itemView.context.startActivity(intent)
+
+    }
+
+    private fun GoEnviarNota(itemView: View) {
+        val intent = Intent(itemView.context, EnviarNotas::class.java)
+        itemView.context.startActivity(intent)
+
+    }
+
+    fun GoRegistrarAlumno(itemView: View){
+        val intent = Intent(itemView.context, RegistrarAlumno::class.java)
+        itemView.context.startActivity(intent)
+
+    }
+
+    fun GoMatricula(itemView: View){
+        val intent = Intent(itemView.context, RealizarMatricula::class.java)
+        itemView.context.startActivity(intent)
+
+    }
+
+    fun GoEnviarMatricula(itemView: View){
+        val intent = Intent(itemView.context, EnviarMatricula::class.java)
+        itemView.context.startActivity(intent)
+
+    }
+
+    fun GoIngresarNotas(itemView: View){
+        val intent = Intent(itemView.context, IngresarNotas::class.java)
+        itemView.context.startActivity(intent)
+
+    }
+
+    fun GoRegistrarClase(itemView: View){
+        val intent = Intent(itemView.context, RegistrarClase::class.java)
+        itemView.context.startActivity(intent)
+
     }
 
 
