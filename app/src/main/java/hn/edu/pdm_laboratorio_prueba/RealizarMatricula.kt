@@ -16,6 +16,7 @@ import java.lang.StringBuilder
 
 class RealizarMatricula : AppCompatActivity() {
     var datos_Matricula: HashMap<Int, String> = hashMapOf()
+    var datos_alumno: HashMap<Int, String> = hashMapOf()
     var num = 0
     var cont:Int=0
     var status=""
@@ -25,6 +26,7 @@ class RealizarMatricula : AppCompatActivity() {
 
         btn_Matricular.setOnClickListener { guardar() }
         btn_regresar2.setOnClickListener { regresar1() }
+        obtener()
 
         inicializar()
 
@@ -60,10 +62,11 @@ class RealizarMatricula : AppCompatActivity() {
         println(datos_Matricula.toString())
     }
 
-    private fun enviar(){
-        val intent = Intent(this, EnviarMatricula ::class.java)
-        intent.putExtra("datos", datos_Matricula)
-        startActivity(intent)
+    private fun obtener(){
+        var intent = intent
+         datos_alumno= intent.getSerializableExtra("clases") as HashMap<Int, String>
+        datos_Matricula= intent.getSerializableExtra("alumno") as HashMap<Int, String>
+
     }
 
 

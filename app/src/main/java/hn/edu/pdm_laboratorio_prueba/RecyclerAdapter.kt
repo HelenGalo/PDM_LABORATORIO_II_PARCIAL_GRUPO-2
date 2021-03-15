@@ -19,9 +19,11 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
     }
 
-    fun enviarClases(dat: HashMap<Int, String>) {
-        this.data_clase = dat
+    fun enviarClases(dat: HashMap<Int, String>, clas:HashMap<Int,String>) {
+        this.data=dat
+        this.data_clase = clas
         println("ESTO ES "+this.data_clase.toString())
+        println("ESTO ES "+this.data.toString())
 
     }
 
@@ -115,7 +117,8 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
     fun GoMatricula(itemView: View){
         val intent = Intent(itemView.context, RealizarMatricula::class.java)
-
+        intent.putExtra("alumno", data)
+        intent.putExtra("clases",data_clase)
         itemView.context.startActivity(intent)
 
     }
