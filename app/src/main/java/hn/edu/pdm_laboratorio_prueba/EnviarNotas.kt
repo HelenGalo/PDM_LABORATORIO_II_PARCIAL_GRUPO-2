@@ -9,14 +9,17 @@ import kotlinx.android.synthetic.main.activity_realizar_matricula.*
 
 class EnviarNotas:AppCompatActivity() {
     var datos_nota: HashMap<Int, String> = hashMapOf()
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
+    var datos_Clase: HashMap<Int, String> = hashMapOf()
+    var datos_Matricula: HashMap<Int, String> = hashMapOf()
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_enviar_notas)
+        obtenerN()
+        inicializarN()
         btn_regresarNota.setOnClickListener {
             regresar()
         }
-        inicializarN()
-        obtenerN()
+
 
     }
 
@@ -26,8 +29,7 @@ class EnviarNotas:AppCompatActivity() {
     }
     private fun obtenerN(){
         var intent = intent
-
-        datos_nota = intent.getSerializableExtra("notas") as HashMap<Int, String>
+       datos_nota = intent.getSerializableExtra("notas")as HashMap<Int, String>
 
 
 
@@ -36,17 +38,22 @@ class EnviarNotas:AppCompatActivity() {
     fun inicializarN(){
 
         var c:String=""
-
-
-
+        var d:String=""
+        var e:String=""
+        var f:String=""
 
         for (valor in datos_nota) {
             val list = valor.toString().split("|").toTypedArray()
             c = list[1].toString()
-
+            d = list[2].toString()
+            e = list[3].toString()
+            f = list[4].toString()
         }
 
         txt_CuentaN.setText(c)
+        txt_nombreA.setText(d)
+        txt_NotaCla.setText(e)
+        txt_NotaE.setText(f)
 
 
     }

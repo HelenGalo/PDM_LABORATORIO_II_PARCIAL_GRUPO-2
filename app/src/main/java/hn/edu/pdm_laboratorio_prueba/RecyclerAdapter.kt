@@ -109,6 +109,7 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
     private fun GoEnviarNota(itemView: View) {
         val intent = Intent(itemView.context, EnviarNotas::class.java)
+        intent.putExtra("notas",nota)
         itemView.context.startActivity(intent)
 
     }
