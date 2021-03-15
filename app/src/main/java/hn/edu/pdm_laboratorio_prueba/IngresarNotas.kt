@@ -81,7 +81,7 @@ class IngresarNotas : AppCompatActivity() {
     private fun regresar(){
         val intent = Intent(this, MainActivity::class.java)
             intent.putExtra("clases", datos_Clase)
-            intent.putExtra("ESTADOCLASE","true")
+            intent.putExtra("ESTADOCLASE","false")
             intent.putExtra("alumno",datos_Matricula)
             intent.putExtra("notas",datos_nota)
             intent.putExtra("estadonota", "true")

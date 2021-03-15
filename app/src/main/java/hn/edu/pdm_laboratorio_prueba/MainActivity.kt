@@ -51,9 +51,6 @@ class MainActivity : AppCompatActivity() {
 
     fun validar(){
         var tem=getVariable().toString()
-
-
-
         var intent = intent
         if(tem=="true"){
             data = intent.getSerializableExtra("listado") as HashMap<Int, String>
@@ -63,22 +60,26 @@ class MainActivity : AppCompatActivity() {
 
         var estadotem=getEstadoCLase().toString()
         var estadof = getEstadoF().toString()
+        var f = getEstadoNota().toString()
         if(estadotem=="true"){
             getClases()
             getCantidad()
             adapter.enviarClases(data,data_clases,cont)
 
+
         }
 
-        if(estadof=="false"){
+
+
+        if(estadof=="false" && f==null){
             a=getMatriculaFinal()
             adapter.enviarm(data,data_clases,a)
 
         }
 
-        var estadoclase = getEstadoNota()
+
         var statefin = getStateFin()
-        if(estadoclase=="true" && statefin=="true"){
+        if(statefin=="true"){
             getNotas()
             adapter.enviar_clases_notas(data,data_clases,nota,a)
 
@@ -136,11 +137,11 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    fun getEstadoNota():String{
+    fun getEstadoNota(){
         val bundle = intent.extras
         val pala = bundle?.get("estadonota")
         this.estado_nota = getString(R.string.txvpalabraoficial, pala)
-        return estado_nota
+
 
     }
 
