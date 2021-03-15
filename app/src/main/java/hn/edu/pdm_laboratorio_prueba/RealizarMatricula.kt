@@ -44,7 +44,7 @@ class RealizarMatricula : AppCompatActivity() {
         }
 
         println(datos_Matricula.toString())
-        var to = arrayOf<String>("edwin.espino@ujcv.edu.hn", "helen.orellana1@ujcv.edu.hn")
+        var to = arrayOf<String>("edwin.espino@ujcv.edu.hn", "helen.orellana1@ujcv.edu.hn","miguel.torres@ujcv.edu.hn","Daniela.herrera@ujcv.edu.hn")
         val intent = Intent(Intent.ACTION_SEND)
         intent.putExtra(Intent.EXTRA_EMAIL,to)
         intent.putExtra(Intent.EXTRA_SUBJECT, "MATRICULA")
