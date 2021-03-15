@@ -87,11 +87,15 @@ class MainActivity : AppCompatActivity() {
             nota = intent.getSerializableExtra("no") as HashMap<Int, String>
             mf = intent.getSerializableExtra("alm") as HashMap<Int, String>
             println("LAS NOTAS SON: "+nota.toString()+ "Y LA MATRICULA"+mf.toString())
-            adapter.enviarm(mf)
-        }else{
-
-
+            adapter.enviarDatos1(mf,nota)
         }
+
+        if(estadodecorreo().toString()=="true"){
+            nota =sendNo()
+            adapter.enviarDatos1(mf,nota)
+        }
+
+
 
 
 
@@ -155,6 +159,19 @@ class MainActivity : AppCompatActivity() {
         return tem
 
 
+    }
+
+    fun estadodecorreo():String{
+        val bundle = intent.extras
+        val pala = bundle?.get("send")
+        var tem = getString(R.string.txvpalabraoficial, pala)
+        return tem
+    }
+
+    fun sendNo(): HashMap<Int, String> {
+        var intent = intent
+        var a = intent.getSerializableExtra("end") as HashMap<Int, String>
+        return a
     }
 
 

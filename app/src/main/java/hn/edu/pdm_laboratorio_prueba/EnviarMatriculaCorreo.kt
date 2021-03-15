@@ -8,6 +8,8 @@ import kotlinx.android.synthetic.main.activity_enviar_matricula_correo.*
 
 class EnviarMatriculaCorreo : AppCompatActivity() {
     var datos_Matricula:HashMap<Int,String> = hashMapOf()
+    var nota:HashMap<Int,String> = hashMapOf()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_enviar_matricula_correo)
@@ -33,7 +35,9 @@ class EnviarMatriculaCorreo : AppCompatActivity() {
     fun obtener() {
         var intent = intent
         datos_Matricula = intent.getSerializableExtra("set") as HashMap<Int, String>
-        println("TOTA"+ datos_Matricula.toString())
+        nota = intent.getSerializableExtra("go") as HashMap<Int, String>
+
+        println("TOTA"+ datos_Matricula.toString()+ "GO "+nota.toString())
 
 
 

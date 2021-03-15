@@ -17,11 +17,20 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
     var cantidad:Int=0
     var nota:HashMap<Int, String> = hashMapOf()
 
+    fun enviarDatos1(dat: HashMap<Int, String>, g:HashMap<Int,String>) {
+        this.mF = dat
+        this.nota = g
+        println("ESTO ES "+this.mF.toString()+ this.nota.toString())
+
+    }
+
     fun enviarDatos(dat: HashMap<Int, String>) {
         this.data = dat
+
         println("ESTO ES "+this.data.toString())
 
     }
+
 
     fun enviarClases(dat: HashMap<Int, String>, clas:HashMap<Int,String> ,h:Int) {
         this.data=dat
@@ -165,6 +174,7 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
     fun GoEnviarMatricula(itemView: View){
         val intent = Intent(itemView.context, EnviarMatriculaCorreo::class.java)
         intent.putExtra("set", mF)
+        intent.putExtra("go", nota)
         itemView.context.startActivity(intent)
 
 
