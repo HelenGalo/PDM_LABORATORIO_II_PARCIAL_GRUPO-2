@@ -28,13 +28,13 @@ class RegistrarClase : AppCompatActivity() {
         spinner_NClase.onItemSelectedListener = object:
             AdapterView.OnItemSelectedListener{
             override fun onNothingSelected(parent: AdapterView<*>?) {
-                txv_SeleccionClase.text= "Seleccione una opcion"
+
             }
 
             override fun onItemSelected(
                 parent: AdapterView<*>?, view: View?, position: Int, id: Long
             ) {
-                txv_SeleccionClase.text= lista_NClases[position].toString()
+
             }
         }
 
@@ -45,13 +45,13 @@ class RegistrarClase : AppCompatActivity() {
         spinner_Seccion.onItemSelectedListener = object:
             AdapterView.OnItemSelectedListener{
             override fun onNothingSelected(parent: AdapterView<*>?) {
-                txv_SeleccionSeccion.text= "Seleccione una opcion"
+
             }
 
             override fun onItemSelected(
                 parent: AdapterView<*>?, view: View?, position: Int, id: Long
             ) {
-                txv_SeleccionSeccion.text= lista_Seccion[position].toString()
+
             }
         }
 
@@ -78,13 +78,13 @@ class RegistrarClase : AppCompatActivity() {
         spinner_Aula.onItemSelectedListener = object:
             AdapterView.OnItemSelectedListener{
             override fun onNothingSelected(parent: AdapterView<*>?) {
-                txv_SeleccionAula.text= "Seleccione una opcion"
+
             }
 
             override fun onItemSelected(
                 parent: AdapterView<*>?, view: View?, position: Int, id: Long
             ) {
-                txv_SeleccionAula.text= lista_Aula[position].toString()
+
             }
         }
         val spinner_Edificio = findViewById<Spinner>(R.id.spinner_Edificio)
@@ -94,13 +94,13 @@ class RegistrarClase : AppCompatActivity() {
         spinner_Edificio.onItemSelectedListener = object:
             AdapterView.OnItemSelectedListener{
             override fun onNothingSelected(parent: AdapterView<*>?) {
-                txv_SeleccionEdificio.text= "Seleccione una opcion"
+
             }
 
             override fun onItemSelected(
                 parent: AdapterView<*>?, view: View?, position: Int, id: Long
             ) {
-                txv_SeleccionEdificio.text= lista_Edificio[position].toString()
+
             }
         }
     }
@@ -108,11 +108,7 @@ class RegistrarClase : AppCompatActivity() {
         val parametro = StringBuilder()
         num += 1
         parametro.append(txt_nCuentaA2.text.toString().trim()).append("|")
-        parametro.append(txv_SeleccionClase.text.toString().trim()).append("|")
-        parametro.append(txv_SeleccionSeccion.text.toString().trim()).append("|")
 
-        parametro.append(txv_SeleccionEdificio.text.toString().trim()).append("|")
-        parametro.append(txv_SeleccionAula.text.toString().trim()).append("|")
         datos_Clase.put(num, parametro.toString())
         Toast.makeText(this, "Clase guardada", Toast.LENGTH_SHORT).show()
 
