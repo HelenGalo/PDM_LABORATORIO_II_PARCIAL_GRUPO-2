@@ -13,6 +13,7 @@ import com.google.android.material.internal.ContextUtils.getActivity
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_realizar_matricula.*
 import kotlinx.android.synthetic.main.activity_registrar_alumno.*
+import kotlinx.android.synthetic.main.activity_registrar_clase.*
 import java.lang.StringBuilder
 
 class RealizarMatricula : AppCompatActivity() {
@@ -51,6 +52,11 @@ class RealizarMatricula : AppCompatActivity() {
         intent.setType("message/rfc822");
         startActivity(Intent.createChooser(intent, "Email"))
 
+        if (txt_nCuentaMat.text.toString().isEmpty()) {
+            Toast.makeText(this, "Ingrese el Numero de cuenta", Toast.LENGTH_SHORT).show()
+        }else{
+            Toast.makeText(this, "Matricula realizada con Exito!", Toast.LENGTH_SHORT).show()
+        }
 
 
     }

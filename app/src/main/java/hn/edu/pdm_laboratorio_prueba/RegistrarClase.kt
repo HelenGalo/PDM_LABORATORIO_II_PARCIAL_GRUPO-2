@@ -108,7 +108,7 @@ class RegistrarClase : AppCompatActivity() {
         }
     }
     private  fun guardar() {
-        cont =cont+1
+        cont = cont + 1
         val parametro = StringBuilder()
         num += 1
         parametro.append("DATOS CLASE").append("|")
@@ -121,9 +121,35 @@ class RegistrarClase : AppCompatActivity() {
 
         datos_Clase.put(num, parametro.toString())
         println(datos_Clase.toString())
-        Toast.makeText(this, "Clase guardada", Toast.LENGTH_SHORT).show()
+        if (txt_nCuentaA2.text.toString().isEmpty()) {
+            Toast.makeText(this, "Ingrese un Numero de cuenta", Toast.LENGTH_SHORT).show()
+        } else {
+            if (spinner_N.selectedItem.toString().isEmpty()) {
+                Toast.makeText(this, "Ingrese una Clase", Toast.LENGTH_SHORT).show()
+            } else {
+                if (spinner_Sec.selectedItem.toString().isEmpty()) {
+                    Toast.makeText(this, "Ingrese una seccion", Toast.LENGTH_SHORT).show()
+                } else {
+                    if (spinner_Aula.selectedItem.toString().isEmpty()) {
+                        Toast.makeText(this, "Ingrese un aula", Toast.LENGTH_SHORT).show()
+                    } else {
+                        if (spinner_Hora.selectedItem.toString().isEmpty()) {
+                            Toast.makeText(this, "Ingrese una hora", Toast.LENGTH_SHORT).show()
+                        } else {
+                            if (spinner_Edificio.selectedItem.toString().isEmpty()) {
+                                Toast.makeText(this, "Ingrese un Edificio", Toast.LENGTH_SHORT).show()
+                            } else {
+                                Toast.makeText(this, "Clase  Registrada", Toast.LENGTH_SHORT).show()
+                            }
 
+                        }
+                    }
+
+                }
+            }
+        }
     }
+
 
     private fun enviar(){
         val intent = Intent(this, EnviarMatricula ::class.java)
