@@ -25,7 +25,7 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
     )
 
     private val details = arrayOf(
-            "Item detalle 1", "Item detalle 2",
+            "Item detalle 1", "Item detalle ",
             "Item detalle 3", "Item detalle 4",
             "Item detalle 5", "Item detalle 6",
             "Item detalle 7", "Item detalle 8"
