@@ -3,6 +3,7 @@ package hn.edu.pdm_laboratorio_prueba
 import android.content.Intent
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.os.Process
 import android.text.InputType
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -24,6 +25,7 @@ class EnviarNotas:AppCompatActivity() {
             regresar()
         }
         btn_Envio.setOnClickListener { guardar() }
+        btn_salir.setOnClickListener { Salir() }
 
         txt_CuentaN.setRawInputType(InputType.TYPE_NULL)
         txt_nombreA.setRawInputType(InputType.TYPE_NULL)
@@ -33,6 +35,8 @@ class EnviarNotas:AppCompatActivity() {
     }
 
     private fun regresar(){
+        val p = Process.myPid()
+        Process.killProcess(p)
         val intent= Intent(this,MainActivity::class.java)
         startActivity(intent)
     }
@@ -90,6 +94,14 @@ class EnviarNotas:AppCompatActivity() {
 
 
     }
+    fun Salir() {
+        val p = Process.myPid()
+        Process.killProcess(p)
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+
+    }
+
 
 
 }
