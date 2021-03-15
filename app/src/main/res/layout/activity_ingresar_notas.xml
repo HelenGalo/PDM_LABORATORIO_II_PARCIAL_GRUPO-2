@@ -5,6 +5,7 @@
     android:id="@+id/frameLayout4"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:foregroundTint="#FFFFFF"
     tools:context=".IngresarNotas">
 
     <Button
@@ -41,8 +42,8 @@
 
     <Spinner
         android:id="@+id/spinner_NClase2"
-        android:layout_width="312dp"
-        android:layout_height="43dp"
+        android:layout_width="322dp"
+        android:layout_height="32dp"
         android:layout_gravity="center"
         android:background="@color/white"
         android:padding="20dp"
@@ -51,15 +52,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.561" />
+        app:layout_constraintVertical_bias="0.55" />
 
     <EditText
         android:id="@+id/txt_nCuentaA3"
         android:layout_width="302dp"
         android:layout_height="42dp"
         android:ems="10"
+        android:foregroundTint="#FFFFFF"
         android:gravity="center"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -83,11 +85,11 @@
 
     <EditText
         android:id="@+id/txt_Nota"
-        android:layout_width="302dp"
-        android:layout_height="34dp"
+        android:layout_width="307dp"
+        android:layout_height="44dp"
         android:ems="10"
         android:gravity="center"
-        android:inputType="textPersonName"
+        android:inputType="numberDecimal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -119,7 +121,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.711" />
+        app:layout_constraintVertical_bias="0.694" />
 
     <TextView
         android:id="@+id/txv_CuentaA2"
@@ -173,6 +175,6 @@
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.638" />
+        app:layout_constraintVertical_bias="0.619" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

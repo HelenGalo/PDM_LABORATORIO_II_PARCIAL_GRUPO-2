@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_ingresar_notas.*
 import kotlinx.android.synthetic.main.activity_realizar_matricula.*
 import kotlinx.android.synthetic.main.activity_registrar_alumno.*
 import java.lang.StringBuilder
@@ -38,6 +39,20 @@ class RegistrarAlumno : AppCompatActivity() {
         datos_Alumnos.put(num,parametro.toString())
         println(datos_Alumnos.toString())
 
+        if (txt_nCuentaA.text.toString().isEmpty()) {
+            Toast.makeText(this, "Debe de ingresar un Numero de cuenta", Toast.LENGTH_SHORT).show()
+        }else {
+            if (txt_NombreA.text.toString().isEmpty()) {
+                Toast.makeText(this, "Debe de ingresar un Nombre", Toast.LENGTH_SHORT).show()
+            } else {
+                if(txt_CorreoA.text.toString().isEmpty()){
+                    Toast.makeText(this, "Ingrese un Correo", Toast.LENGTH_SHORT).show()
+                }else{
+                    Toast.makeText(this, "Nota Agregada", Toast.LENGTH_SHORT).show()
+                }
+
+            }
+        }
 
     }
 
