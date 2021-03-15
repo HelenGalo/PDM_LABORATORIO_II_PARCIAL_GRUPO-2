@@ -20,6 +20,7 @@ class RealizarMatricula : AppCompatActivity() {
     var datos_alumno: HashMap<Int, String> = hashMapOf()
     var num = 0
     var cont:Int=0
+    var cantidad:String=""
     var status=""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,11 +37,7 @@ class RealizarMatricula : AppCompatActivity() {
 
 
     private  fun guardar() {
-        cont = cont+1
-        val parametro = StringBuilder()
-        num += 1
-        parametro.append(txv_Seleccion.text.toString().trim()).append("|")
-        datos_Matricula.put(1, datos_Matricula.get(1)+parametro.toString())
+
         if(cont>0){
             Toast.makeText(this,"CLASE INSCRITA", Toast.LENGTH_LONG).show()
         }
@@ -63,6 +60,11 @@ class RealizarMatricula : AppCompatActivity() {
          datos_alumno= intent.getSerializableExtra("clases") as HashMap<Int, String>
         datos_Matricula= intent.getSerializableExtra("alumno") as HashMap<Int, String>
 
+        val bundle = intent.extras
+        val pala = bundle?.get("cant")
+        this.cantidad = getString(R.string.txvpalabraoficial, pala)
+
+
     }
 
 
@@ -77,14 +79,22 @@ class RealizarMatricula : AppCompatActivity() {
     fun inicializar(){
         var a:String=""
         var b:String=""
-        for(valor in datos_Matricula) {
+        var c:Int=0
+
+
+
+
+            for (valor in datos_alumno) {
+                val list = valor.toString().split("|").toTypedArray()
+                b =b+list[2].toString()+" "
+
+
+            }
+
+
+        for (valor in datos_Matricula) {
             val list = valor.toString().split("|").toTypedArray()
             a = list[1].toString()
-
-        }
-        for(valor in datos_alumno) {
-            val list = valor.toString().split("|").toTypedArray()
-            b = list[2].toString()
 
         }
 

@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
     var  data: HashMap<Int, String> = hashMapOf()
     var  data_clase: HashMap<Int, String> = hashMapOf()
+    var cantidad:String=""
 
     fun enviarDatos(dat: HashMap<Int, String>) {
         this.data = dat
@@ -19,11 +20,13 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
     }
 
-    fun enviarClases(dat: HashMap<Int, String>, clas:HashMap<Int,String>) {
+    fun enviarClases(dat: HashMap<Int, String>, clas:HashMap<Int,String>, cantidad:String) {
         this.data=dat
         this.data_clase = clas
+        this.cantidad = cantidad
         println("ESTO ES "+this.data_clase.toString())
         println("ESTO ES "+this.data.toString())
+        println("ESTO ES "+this.cantidad.toString())
 
     }
 
@@ -119,6 +122,7 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
         val intent = Intent(itemView.context, RealizarMatricula::class.java)
         intent.putExtra("alumno", data)
         intent.putExtra("clases",data_clase)
+        intent.putExtra("cant", cantidad)
         itemView.context.startActivity(intent)
 
     }
