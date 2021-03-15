@@ -3,6 +3,7 @@ package hn.edu.pdm_laboratorio_prueba
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Process
 import android.text.InputType
 import android.view.View
 import android.widget.AdapterView
@@ -79,10 +80,12 @@ class RealizarMatricula : AppCompatActivity() {
 
 
     fun regresar1() {
+
         val intent = Intent(this, MainActivity::class.java)
         intent.putExtra("goahead", "false")
         intent.putExtra("m", matricula_final)
         startActivity(intent)
+
     }
 
 

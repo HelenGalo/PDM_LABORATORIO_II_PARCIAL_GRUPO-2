@@ -2,6 +2,7 @@ package hn.edu.pdm_laboratorio_prueba
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Process
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -80,6 +81,7 @@ class IngresarNotas : AppCompatActivity() {
     }
 
     private fun regresar(){
+
         val intent = Intent(this, MainActivity::class.java)
 
             intent.putExtra("ESTADOCLASE","false")
@@ -89,6 +91,8 @@ class IngresarNotas : AppCompatActivity() {
             intent.putExtra("state", "true")
 
             startActivity(intent)
+        val p = Process.myPid()
+        Process.killProcess(p)
         }
 
 

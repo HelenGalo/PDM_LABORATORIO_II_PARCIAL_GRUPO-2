@@ -94,10 +94,11 @@ class EnviarNotas:AppCompatActivity() {
 
     }
     fun Salir() {
-        val p = Process.myPid()
-        Process.killProcess(p)
+
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
+        val p = Process.myPid()
+        Process.killProcess(p)
 
     }
 

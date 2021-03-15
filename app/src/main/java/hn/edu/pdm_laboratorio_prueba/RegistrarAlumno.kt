@@ -2,6 +2,7 @@ package hn.edu.pdm_laboratorio_prueba
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Process
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -60,6 +61,7 @@ class RegistrarAlumno : AppCompatActivity() {
 
 
     fun regresar() {
+
         var status:String = "true"
         val intent = Intent(this, MainActivity::class.java)
         intent.putExtra("listado", datos_Alumnos)

@@ -2,6 +2,7 @@ package hn.edu.pdm_laboratorio_prueba
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Process
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -154,6 +155,7 @@ class RegistrarClase : AppCompatActivity() {
 
 
     fun regresar3() {
+
         val intent = Intent(this, MainActivity::class.java)
         intent.putExtra("clases", datos_Clase)
         intent.putExtra("ESTADOCLASE","true")
@@ -161,6 +163,7 @@ class RegistrarClase : AppCompatActivity() {
         intent.putExtra("cantidad",cont)
         intent.putExtra("statef", "true")
         startActivity(intent)
+
     }
 
     fun recibir(){
