@@ -80,8 +80,8 @@ class RealizarMatricula : AppCompatActivity() {
 
     fun regresar1() {
         val intent = Intent(this, MainActivity::class.java)
-        intent.putExtra("estadof", "false")
-        intent.putExtra("matriculaf", matricula_final)
+        intent.putExtra("goahead", "false")
+        intent.putExtra("m", matricula_final)
         startActivity(intent)
     }
 

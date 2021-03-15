@@ -14,8 +14,8 @@ import java.lang.StringBuilder
 
 class IngresarNotas : AppCompatActivity() {
     var datos_nota: HashMap<Int, String> = hashMapOf()
-    var datos_Clase: HashMap<Int, String> = hashMapOf()
-    var datos_Matricula: HashMap<Int, String> = hashMapOf()
+
+    var datos_MatriculaF: HashMap<Int, String> = hashMapOf()
     var num = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,6 +27,7 @@ class IngresarNotas : AppCompatActivity() {
         btn_regresarN.setOnClickListener{
             regresar()
         }
+        recibir()
 
         val spinnerClaseN = findViewById<Spinner>(R.id.spinner_NClase2)
         val listaClases = resources.getStringArray(R.array.valoresClases)
@@ -80,14 +81,22 @@ class IngresarNotas : AppCompatActivity() {
 
     private fun regresar(){
         val intent = Intent(this, MainActivity::class.java)
-            intent.putExtra("clases", datos_Clase)
+
             intent.putExtra("ESTADOCLASE","false")
-            intent.putExtra("alumno",datos_Matricula)
-            intent.putExtra("notas",datos_nota)
+            intent.putExtra("alm",datos_MatriculaF)
+            intent.putExtra("no",datos_nota)
             intent.putExtra("estadonota", "true")
             intent.putExtra("state", "true")
 
             startActivity(intent)
         }
+
+
+
+    private fun recibir(){
+        var intent = intent
+        datos_MatriculaF= intent.getSerializableExtra("mf") as HashMap<Int, String>
+        println(datos_MatriculaF.toString())
+    }
 
     }

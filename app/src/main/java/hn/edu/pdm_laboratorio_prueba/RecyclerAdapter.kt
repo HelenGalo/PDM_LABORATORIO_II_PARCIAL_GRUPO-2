@@ -32,14 +32,12 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
 
     }
-    fun enviarm(dat: HashMap<Int, String>, clas:HashMap<Int,String>,c:HashMap<Int,String>){
-        this.data=dat
-        this.data_clase = clas
+    fun enviarm(c:HashMap<Int,String>){
+
+
         this.mF=c
-        println("ESTO ES "+this.data_clase.toString())
-        println("ESTO ES "+this.data.toString())
-        println("ESTO ES "+this.nota.toString())
-        println("ESTO ES"+ cantidad.toString())
+        println("ESTO ES "+this.mF.toString())
+
     }
 
 
@@ -165,8 +163,8 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
     }
 
     fun GoEnviarMatricula(itemView: View){
-        val intent = Intent(itemView.context, EnviarMatricula::class.java)
-        intent.putExtra("Variable", "")
+        val intent = Intent(itemView.context, EnviarMatriculaCorreo::class.java)
+        intent.putExtra("set", mF)
         itemView.context.startActivity(intent)
 
 
@@ -174,8 +172,7 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
     fun GoIngresarNotas(itemView: View){
         val intent = Intent(itemView.context, IngresarNotas::class.java)
-
-        intent.putExtra("notas",nota)
+        intent.putExtra("mf",mF)
         itemView.context.startActivity(intent)
 
     }

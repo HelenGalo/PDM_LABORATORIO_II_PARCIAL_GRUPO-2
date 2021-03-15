@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     var estado_nota="false"
     var estadof="true"
     var nota:HashMap<Int, String> = hashMapOf()
+    var mf:HashMap<Int, String> = hashMapOf()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -69,21 +70,31 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        println("El estado f es: " +estadof.toString() +"Y f es: "+f.toString())
 
 
-        if(estadof=="false" && f==null){
+
+        if(estadof=="false" ){
             a=getMatriculaFinal()
-            adapter.enviarm(data,data_clases,a)
+            println("LA MATRICULAS ES"+ a.toString())
+            adapter.enviarm(a)
+
+        }
+        println("ESTADO FINAL:"+ getStateFin().toString())
+
+        if(getStateFin()=="true"){
+            var intent = intent
+            nota = intent.getSerializableExtra("no") as HashMap<Int, String>
+            mf = intent.getSerializableExtra("alm") as HashMap<Int, String>
+            println("LAS NOTAS SON: "+nota.toString()+ "Y LA MATRICULA"+mf.toString())
+            adapter.enviarm(mf)
+        }else{
+
 
         }
 
 
-        var statefin = getStateFin()
-        if(statefin=="true"){
-            getNotas()
-            adapter.enviar_clases_notas(data,data_clases,nota,a)
 
-        }
 
 
     }
@@ -100,7 +111,7 @@ class MainActivity : AppCompatActivity() {
 
     fun getMatriculaFinal(): HashMap<Int, String> {
         var intent = intent
-        var m_Final = intent.getSerializableExtra("matriculaf") as HashMap<Int, String>
+        var m_Final = intent.getSerializableExtra("m") as HashMap<Int, String>
         return m_Final
 
     }
@@ -130,17 +141,18 @@ class MainActivity : AppCompatActivity() {
 
     fun getEstadoF():String{
         val bundle = intent.extras
-        val pala = bundle?.get("estadof")
-        this.estadof = getString(R.string.txvpalabraoficial, pala)
-        return estado_Clase
+        val pala = bundle?.get("goahead")
+        var p = getString(R.string.txvpalabraoficial, pala)
+        return p
 
     }
 
 
-    fun getEstadoNota(){
+    fun getEstadoNota():String{
         val bundle = intent.extras
         val pala = bundle?.get("estadonota")
-        this.estado_nota = getString(R.string.txvpalabraoficial, pala)
+        var tem = getString(R.string.txvpalabraoficial, pala)
+        return tem
 
 
     }
