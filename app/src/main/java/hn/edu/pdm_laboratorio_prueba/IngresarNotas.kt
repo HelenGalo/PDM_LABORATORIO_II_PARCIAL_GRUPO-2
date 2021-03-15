@@ -31,7 +31,7 @@ class IngresarNotas : AppCompatActivity() {
         parametro.append(spinner_NClase2.toString().trim()).append("|")
 
         datos_nota.put(num, parametro.toString())
-        Toast.makeText(this, "Nota Agregada ", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Nota Agregada", Toast.LENGTH_SHORT).show()
     }
 
     private fun regresar(){
