@@ -47,7 +47,7 @@ class IngresarNotas : AppCompatActivity() {
         parametro.append(txt_nCuentaA3.text.toString().trim()).append("|")
         parametro.append(txt_NombreA2.text.toString().trim()).append("|")
         parametro.append(txt_Nota.text.toString().trim()).append("|")
-        parametro.append(spinner_NClase2.toString().trim()).append("|")
+        parametro.append(txv_SelecNomClaseIN.text.toString().trim()).append("|")
 
         datos_nota.put(num, parametro.toString())
         Toast.makeText(this, "Nota Agregada", Toast.LENGTH_SHORT).show()
