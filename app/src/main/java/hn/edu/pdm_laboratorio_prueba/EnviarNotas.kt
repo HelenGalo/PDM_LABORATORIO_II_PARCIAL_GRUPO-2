@@ -3,6 +3,7 @@ package hn.edu.pdm_laboratorio_prueba
 import android.content.Intent
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_enviar_notas.*
 import kotlinx.android.synthetic.main.activity_realizar_matricula.*
@@ -11,6 +12,7 @@ class EnviarNotas:AppCompatActivity() {
     var datos_nota: HashMap<Int, String> = hashMapOf()
     var datos_Clase: HashMap<Int, String> = hashMapOf()
     var datos_Matricula: HashMap<Int, String> = hashMapOf()
+    var cont:Int=0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_enviar_notas)
@@ -19,6 +21,7 @@ class EnviarNotas:AppCompatActivity() {
         btn_regresarNota.setOnClickListener {
             regresar()
         }
+        btn_Envio.setOnClickListener { guardar() }
 
 
     }
@@ -27,6 +30,30 @@ class EnviarNotas:AppCompatActivity() {
         val intent= Intent(this,MainActivity::class.java)
         startActivity(intent)
     }
+
+
+
+
+    private  fun guardar() {
+
+        if(cont>0){
+            Toast.makeText(this,"CLASE INSCRITA", Toast.LENGTH_LONG).show()
+        }
+
+        println(datos_nota.toString())
+        var to = arrayOf<String>("edwin.espino@ujcv.edu.hn", "helen.orellana1@ujcv.edu.hn","miguel.torres@ujcv.edu.hn","Daniela.herrera@ujcv.edu.hn")
+        val intent = Intent(Intent.ACTION_SEND)
+        intent.putExtra(Intent.EXTRA_EMAIL,to)
+        intent.putExtra(Intent.EXTRA_SUBJECT, "NOTAS")
+        intent.putExtra(Intent.EXTRA_TEXT, datos_nota.toString())
+        intent.setType("message/rfc822");
+        startActivity(Intent.createChooser(intent, "Email"))
+
+
+
+
+    }
+
     private fun obtenerN(){
         var intent = intent
        datos_nota = intent.getSerializableExtra("notas")as HashMap<Int, String>
@@ -57,5 +84,6 @@ class EnviarNotas:AppCompatActivity() {
 
 
     }
+
 
 }
