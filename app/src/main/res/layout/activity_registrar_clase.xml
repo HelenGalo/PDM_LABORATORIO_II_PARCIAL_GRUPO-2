@@ -9,9 +9,9 @@
 
     <Button
         android:id="@+id/btn_regresar3"
-        android:layout_width="152dp"
-        android:layout_height="81dp"
-        android:layout_marginBottom="44dp"
+        android:layout_width="167dp"
+        android:layout_height="87dp"
+        android:layout_marginBottom="36dp"
         android:background="@color/red4"
         android:foreground="@android:drawable/ic_menu_rotate"
         android:foregroundGravity="top|bottom|clip_horizontal|right"
@@ -22,7 +22,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.83"
+        app:layout_constraintHorizontal_bias="0.856"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
