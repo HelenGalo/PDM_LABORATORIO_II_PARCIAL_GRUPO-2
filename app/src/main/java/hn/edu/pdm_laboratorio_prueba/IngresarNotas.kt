@@ -51,17 +51,6 @@ class IngresarNotas : AppCompatActivity() {
 
     private  fun guardar() {
 
-        val parametro = StringBuilder()
-        num += 1
-        parametro.append("DATOS ALUMNOS").append("|")
-        parametro.append(txt_nCuentaA3.text.toString().trim()).append("|")
-        parametro.append(txt_NombreA2.text.toString().trim()).append("|")
-        parametro.append(spinner_NClase2.selectedItem.toString().trim()).append("|")
-        parametro.append(txt_Nota.text.toString().trim()).append("|")
-
-        datos_nota.put(num, parametro.toString())
-        println(datos_nota.toString())
-
         if (txt_nCuentaA3.text.toString().isEmpty()) {
             Toast.makeText(this, "Debe de ingresar un Numero de cuenta", Toast.LENGTH_SHORT).show()
         }else {
@@ -72,6 +61,17 @@ class IngresarNotas : AppCompatActivity() {
                     Toast.makeText(this, "Ingrese una nota", Toast.LENGTH_SHORT).show()
                 }else{
                     Toast.makeText(this, "Nota Registrada!", Toast.LENGTH_SHORT).show()
+
+                    val parametro = StringBuilder()
+                    num += 1
+                    parametro.append("DATOS ALUMNOS").append("|")
+                    parametro.append(txt_nCuentaA3.text.toString().trim()).append("|")
+                    parametro.append(txt_NombreA2.text.toString().trim()).append("|")
+                    parametro.append(spinner_NClase2.selectedItem.toString().trim()).append("|")
+                    parametro.append(txt_Nota.text.toString().trim()).append("|")
+
+                    datos_nota.put(num, parametro.toString())
+                    println(datos_nota.toString())
                 }
 
             }
