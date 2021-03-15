@@ -3,10 +3,12 @@ package hn.edu.pdm_laboratorio_prueba
 import android.content.Intent
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.text.InputType
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_enviar_notas.*
 import kotlinx.android.synthetic.main.activity_realizar_matricula.*
+import kotlinx.android.synthetic.main.activity_registrar_alumno.*
 
 class EnviarNotas:AppCompatActivity() {
     var datos_nota: HashMap<Int, String> = hashMapOf()
@@ -23,7 +25,10 @@ class EnviarNotas:AppCompatActivity() {
         }
         btn_Envio.setOnClickListener { guardar() }
 
-
+        txt_CuentaN.setRawInputType(InputType.TYPE_NULL)
+        txt_nombreA.setRawInputType(InputType.TYPE_NULL)
+        txt_NotaCla.setRawInputType(InputType.TYPE_NULL)
+        txt_NotaE.setRawInputType(InputType.TYPE_NULL)
     }
 
     private fun regresar(){
