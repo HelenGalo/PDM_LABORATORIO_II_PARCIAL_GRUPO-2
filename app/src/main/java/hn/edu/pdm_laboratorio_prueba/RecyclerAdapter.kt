@@ -19,8 +19,8 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
     }
 
     private val titles = arrayOf(
-            "Registrar Alumno",
-            "Matricula", "Registrar Clase", "Ingresar Notas",
+            "Registrar Alumno","Registrar Clase",
+            "Matricula",  "Ingresar Notas",
             "Enviar Matricula", "Enviar Nota"
     )
 
@@ -67,8 +67,8 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
                 when(position){
                     0 -> GoRegistrarAlumno(itemView)
-                    1 -> GoMatricula(itemView)
-                    2 -> GoRegistrarClase(itemView)
+                    1 -> GoRegistrarClase(itemView)
+                    2 -> GoMatricula(itemView)
                     3 -> GoIngresarNotas(itemView)
                     4 -> GoEnviarMatricula(itemView)
                     5 -> GoEnviarNota(itemView)
