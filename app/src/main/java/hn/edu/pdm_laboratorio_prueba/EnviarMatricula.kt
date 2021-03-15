@@ -20,9 +20,7 @@ class EnviarMatricula:AppCompatActivity() {
             regresar()
 
         }
-        obtener()
 
-        inicializar()
 
 
 
@@ -33,22 +31,7 @@ class EnviarMatricula:AppCompatActivity() {
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
     }
-    private fun obtener(){
-        var intent = intent
-        datos_alumno= intent.getSerializableExtra("clases") as HashMap<Int, String>
-        datos_Matricula= intent.getSerializableExtra("alumno") as HashMap<Int, String>
 
-    }
-    fun inicializar(){
-        var a:String=""
-        for(valor in datos_Matricula) {
-            val list = valor.toString().split("|").toTypedArray()
-            a = list[1].toString()
-        }
-
-        txt_CuentaEv.setText(a)
-
-    }
 
 
 

@@ -9,10 +9,13 @@ import android.widget.Spinner
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_ingresar_notas.*
 import kotlinx.android.synthetic.main.activity_realizar_matricula.*
+import kotlinx.android.synthetic.main.activity_registrar_clase.*
 import java.lang.StringBuilder
 
 class IngresarNotas : AppCompatActivity() {
     var datos_nota: HashMap<Int, String> = hashMapOf()
+    var datos_Clase: HashMap<Int, String> = hashMapOf()
+    var datos_Matricula: HashMap<Int, String> = hashMapOf()
     var num = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,8 +54,11 @@ class IngresarNotas : AppCompatActivity() {
         parametro.append(txt_NombreA2.text.toString().trim()).append("|")
         parametro.append(txt_Nota.text.toString().trim()).append("|")
         parametro.append(txv_SelecNomClaseIN.text.toString().trim()).append("|")
+        parametro.append(spinner_NClase2.selectedItem.toString().trim()).append("|")
 
         datos_nota.put(num, parametro.toString())
+        println(datos_nota.toString())
+        Toast.makeText(this, "Nota Ingresada", Toast.LENGTH_SHORT).show()
 
         if (txt_nCuentaA3.text.toString().isEmpty()) {
             Toast.makeText(this, "Debe de ingresar un Numero de cuenta", Toast.LENGTH_SHORT).show()
@@ -63,7 +69,7 @@ class IngresarNotas : AppCompatActivity() {
                 if(txt_Nota.text.toString().isEmpty()){
                     Toast.makeText(this, "Ingrese una nota", Toast.LENGTH_SHORT).show()
                 }else{
-                    Toast.makeText(this, "Alumno Registrado!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Nota Registrado!", Toast.LENGTH_SHORT).show()
                 }
 
             }
@@ -72,6 +78,11 @@ class IngresarNotas : AppCompatActivity() {
 
     private fun regresar(){
         val intent = Intent(this, MainActivity::class.java)
-        startActivity(intent)
+            intent.putExtra("clases", datos_Clase)
+            intent.putExtra("ESTADOCLASE","true")
+            intent.putExtra("alumno",datos_Matricula)
+            intent.putExtra("notas",datos_nota)
+            startActivity(intent)
+        }
+
     }
-}

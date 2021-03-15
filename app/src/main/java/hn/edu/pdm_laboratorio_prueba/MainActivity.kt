@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
     var status:String="false"
     var cont:Int = 0
     var estado_Clase="false"
+    var nota:HashMap<Int, String> = hashMapOf()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -97,8 +98,10 @@ class MainActivity : AppCompatActivity() {
         var intent = intent
         data_clases = intent.getSerializableExtra("clases") as HashMap<Int, String>
         data = intent.getSerializableExtra("alumno") as HashMap<Int, String>
+        nota = intent.getSerializableExtra("notas") as HashMap<Int, String>
         println("LAS CLASES SON "+data_clases.toString())
         println("El alumno es "+ data.toString())
+        println("notas "+ nota.toString())
 
     }
 
