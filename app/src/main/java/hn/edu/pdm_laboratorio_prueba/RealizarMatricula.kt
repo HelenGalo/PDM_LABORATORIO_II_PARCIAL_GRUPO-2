@@ -31,23 +31,8 @@ class RealizarMatricula : AppCompatActivity() {
         inicializar()
 
 
-        val spinnerClase = findViewById<Spinner>(R.id.spinner_C)
-        val listaClases = resources.getStringArray(R.array.valoresClases)
-        val adaptador = ArrayAdapter(this,android.R.layout.simple_spinner_item, listaClases)
-        spinnerClase.adapter =adaptador
-        spinnerClase.onItemSelectedListener = object:
-            AdapterView.OnItemSelectedListener{
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-                txv_Seleccion.text= "Seleccione una opcion"
-            }
-
-            override fun onItemSelected(
-                parent: AdapterView<*>?, view: View?, position: Int, id: Long
-            ) {
-                txv_Seleccion.text= listaClases[position].toString()
-            }
         }
-    }
+
 
     private  fun guardar() {
         cont = cont+1
