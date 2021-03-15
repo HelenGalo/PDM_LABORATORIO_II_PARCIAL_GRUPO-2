@@ -9,9 +9,8 @@
 
     <Button
         android:id="@+id/btn_regresar2"
-        android:layout_width="154dp"
-        android:layout_height="61dp"
-        android:layout_marginBottom="88dp"
+        android:layout_width="180dp"
+        android:layout_height="65dp"
         android:background="@color/red4"
         android:foreground="@android:drawable/ic_menu_rotate"
         android:foregroundGravity="top|bottom|clip_horizontal|right"
@@ -22,8 +21,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.937"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.928"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.867" />
 
     <TextView
         android:id="@+id/txv_NoClases2"
@@ -96,8 +97,8 @@
 
     <TextView
         android:id="@+id/txv_Seleccion"
-        android:layout_width="231dp"
-        android:layout_height="32dp"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
         android:fontFamily="sans-serif"
         android:gravity="center"
         android:text="@string/seleccion"
@@ -105,10 +106,9 @@
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.587" />
+        app:layout_constraintVertical_bias="0.703" />
 
     <Spinner
         android:id="@+id/spinner_C"
@@ -129,7 +129,6 @@
         android:id="@+id/btn_Matricular"
         android:layout_width="187dp"
         android:layout_height="65dp"
-        android:layout_marginBottom="88dp"
         android:background="@color/red4"
         android:foreground="@android:drawable/ic_menu_save"
         android:foregroundGravity="top|bottom|clip_horizontal|right"
@@ -138,7 +137,9 @@
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.129"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.071"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.867" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
