@@ -29,6 +29,7 @@ class EnviarNotas:AppCompatActivity() {
         txt_nombreA.setRawInputType(InputType.TYPE_NULL)
         txt_NotaCla.setRawInputType(InputType.TYPE_NULL)
         txt_NotaE.setRawInputType(InputType.TYPE_NULL)
+
     }
 
     private fun regresar(){
