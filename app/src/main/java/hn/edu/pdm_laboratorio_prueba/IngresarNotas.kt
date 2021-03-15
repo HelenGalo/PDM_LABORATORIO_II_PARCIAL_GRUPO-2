@@ -2,6 +2,10 @@ package hn.edu.pdm_laboratorio_prueba
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.Spinner
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_ingresar_notas.*
 import kotlinx.android.synthetic.main.activity_realizar_matricula.*
@@ -18,6 +22,21 @@ class IngresarNotas : AppCompatActivity() {
         }
         btn_regresarN.setOnClickListener{
             regresar()
+        }
+        val spinnerClaseN = findViewById<Spinner>(R.id.spinner_NClase2)
+        val listaClases = resources.getStringArray(R.array.valoresClases)
+        val adaptador = ArrayAdapter(this,android.R.layout.simple_spinner_item,listaClases)
+        spinnerClaseN.adapter = adaptador
+        spinnerClaseN.onItemSelectedListener = object:
+            AdapterView.OnItemSelectedListener{
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                txv_SelecNomClaseIN.text = "Seleccione una opcion"
+            }
+
+            override fun onItemSelected(
+                parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                txv_SelecNomClaseIN.text= listaClases[position].toString()
+            }
         }
 
     }
