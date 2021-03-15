@@ -58,7 +58,7 @@ class IngresarNotas : AppCompatActivity() {
 
         datos_nota.put(num, parametro.toString())
         println(datos_nota.toString())
-        Toast.makeText(this, "Nota Ingresada", Toast.LENGTH_SHORT).show()
+
 
         if (txt_nCuentaA3.text.toString().isEmpty()) {
             Toast.makeText(this, "Debe de ingresar un Numero de cuenta", Toast.LENGTH_SHORT).show()
