@@ -22,7 +22,9 @@ class EnviarMatricula:AppCompatActivity() {
             regresar()
 
         }
-        btn_regresarE2.onBackPressed()
+        btn_regresarE2.setOnClickListener {
+            Salir()
+        }
 
         println(datos_Matricula.toString())
         var to = arrayOf<String>("edwin.espino@ujcv.edu.hn", "helen.orellana1@ujcv.edu.hn")
@@ -40,6 +42,7 @@ class EnviarMatricula:AppCompatActivity() {
 
 
     fun regresar() {
+
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
     }
@@ -47,6 +50,9 @@ class EnviarMatricula:AppCompatActivity() {
     fun Salir() {
         val p = Process.myPid()
         Process.killProcess(p)
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+
     }
 
 

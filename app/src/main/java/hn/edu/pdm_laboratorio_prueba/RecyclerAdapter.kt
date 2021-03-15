@@ -174,9 +174,8 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
     fun GoIngresarNotas(itemView: View){
         val intent = Intent(itemView.context, IngresarNotas::class.java)
-        intent.putExtra("mf", mF)
-        intent.putExtra("dalumno",data)
-        intent.putExtra("dclase",data_clase)
+
+        intent.putExtra("notas",nota)
         itemView.context.startActivity(intent)
 
     }
