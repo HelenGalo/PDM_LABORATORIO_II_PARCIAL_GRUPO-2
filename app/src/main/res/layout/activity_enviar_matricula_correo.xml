@@ -45,18 +45,18 @@
 
     <TextView
         android:id="@+id/txv_TituloEM2"
-        android:layout_width="290dp"
-        android:layout_height="69dp"
+        android:layout_width="280dp"
+        android:layout_height="57dp"
         android:text="ENVIAR MATRICULA "
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textSize="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.438"
+        app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.067" />
+        app:layout_constraintVertical_bias="0.087" />
 
     <TextView
         android:id="@+id/txv_Correo"
@@ -99,6 +99,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.315" />
+
+    <Button
+        android:id="@+id/btn_salir2"
+        android:layout_width="104dp"
+        android:layout_height="32dp"
+        android:background="@color/red4"
+        android:foreground="@android:drawable/ic_menu_revert"
+        android:foregroundGravity="top|bottom|clip_horizontal|right|fill"
+        android:freezesText="false"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.983"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.012" />
 
     <EditText
         android:id="@+id/txt_ASUNTO"

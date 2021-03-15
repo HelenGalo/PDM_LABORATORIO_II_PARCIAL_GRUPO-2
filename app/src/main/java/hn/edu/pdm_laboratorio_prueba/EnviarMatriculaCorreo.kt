@@ -16,6 +16,7 @@ class EnviarMatriculaCorreo : AppCompatActivity() {
         obtener()
         btn_Envio2.setOnClickListener { enviar() }
         btn_regresarEn.setOnClickListener {regresar() }
+        btn_salir2.setOnClickListener {Salir() }
     }
 
 
@@ -44,11 +45,15 @@ class EnviarMatriculaCorreo : AppCompatActivity() {
     }
 
     private fun regresar(){
-        val p = Process.myPid()
-        Process.killProcess(p)
+
         val intent= Intent(this,MainActivity::class.java)
         intent.putExtra("end", nota)
         startActivity(intent)
+    }
+    fun Salir() {
+        val p = Process.myPid()
+        Process.killProcess(p)
+
     }
 
 }
