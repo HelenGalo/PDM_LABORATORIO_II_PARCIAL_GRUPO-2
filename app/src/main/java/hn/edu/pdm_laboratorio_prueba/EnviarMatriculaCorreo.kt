@@ -14,7 +14,7 @@ class EnviarMatriculaCorreo : AppCompatActivity() {
 
     fun envio() {
 
-        val intent = Intent(this, EnviarMatricula::class.java)
+        val intent = Intent(this, ::class.java)
         startActivity(intent)
     }
 
