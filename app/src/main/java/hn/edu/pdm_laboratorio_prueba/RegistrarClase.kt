@@ -16,6 +16,7 @@ class RegistrarClase : AppCompatActivity() {
     var datos_Clase: HashMap<Int, String> = hashMapOf()
     var datos_Matricula: HashMap<Int, String> = hashMapOf()
     var num = 0
+    var cont:Int=0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registrar_clase)
@@ -107,6 +108,7 @@ class RegistrarClase : AppCompatActivity() {
         }
     }
     private  fun guardar() {
+        cont =cont+1
         val parametro = StringBuilder()
         num += 1
         parametro.append("DATOS CLASE").append("|")
@@ -134,6 +136,7 @@ class RegistrarClase : AppCompatActivity() {
         intent.putExtra("clases", datos_Clase)
         intent.putExtra("ESTADOCLASE","true")
         intent.putExtra("alumno",datos_Matricula)
+        intent.putExtra("cantidad",cont.toString())
         startActivity(intent)
     }
 

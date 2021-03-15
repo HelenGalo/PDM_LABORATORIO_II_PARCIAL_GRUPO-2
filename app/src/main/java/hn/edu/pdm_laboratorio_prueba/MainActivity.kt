@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
     var status:String="false"
     var cont:Int = 0
     var estado_Clase="false"
+    var cantidad:String=""
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -60,7 +61,7 @@ class MainActivity : AppCompatActivity() {
         var estadotem=getEstadoCLase().toString()
         if(estadotem=="true"){
             getClases()
-            adapter.enviarClases(data,data_clases)
+            adapter.enviarClases(data,data_clases, cantidad)
         }
 
     }
@@ -78,7 +79,9 @@ class MainActivity : AppCompatActivity() {
     fun getEstadoCLase():String{
         val bundle = intent.extras
         val pala = bundle?.get("ESTADOCLASE")
+        val cant = bundle?.get("cantidad")
         this.estado_Clase = getString(R.string.txvpalabraoficial, pala)
+        this.cantidad=getString(R.string.txvpalabraoficial, cant)
         return estado_Clase
 
     }
