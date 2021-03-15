@@ -1,5 +1,6 @@
 package hn.edu.pdm_laboratorio_prueba
 import android.content.Intent
+import android.os.Process
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -54,23 +55,27 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
     }
 
     private val titles = arrayOf(
-            "Registrar Alumno","Registrar Clase",
-            "Matricula",  "Ingresar Notas",
-            "Enviar Matricula", "Enviar Nota"
+            "Registrar Alumno", "Registrar Clase",
+            "Matricula", "Ingresar Notas",
+            "Enviar Matricula", "Enviar Nota", "Salir"
     )
 
     private val details = arrayOf(
-            "Item detalle 1", "Item detalle ",
-            "Item detalle 3", "Item detalle 4",
-            "Item detalle 5", "Item detalle 6",
-            "Item detalle 7", "Item detalle 8"
+            "Registrar un Alumno  ",
+            "Registrar las Clases",
+            "Realizar Matricula",
+            "Ingreso de Notas",
+            "Enviar Matricula por Correo",
+            "Enviar nota por Correo",
+            "Cerrar sesion"
+
     )
 
     private val images = intArrayOf(
             R.drawable.image2,
             R.drawable.imagen1, R.drawable.clases,
             R.drawable.images3, R.drawable.images4,
-            R.drawable.image5
+            R.drawable.image5,R.drawable.cerrar,
     )
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ViewHolder {
@@ -107,7 +112,8 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
                     3 -> GoIngresarNotas(itemView)
                     4 -> GoEnviarMatricula(itemView)
                     5 -> GoEnviarNota(itemView)
-                    else-> GoMain(itemView)
+                    6 -> GoCerrar(itemView)
+                    else->GoMain(itemView)
 
                 }
 
@@ -120,6 +126,13 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
         }
 
+
+    }
+    private fun GoCerrar(itemView: View){
+        val p = Process.myPid()
+        Process.killProcess(p)
+        val intent = Intent(itemView.context, p::class.java)
+        itemView.context.startActivity(intent)
 
     }
 

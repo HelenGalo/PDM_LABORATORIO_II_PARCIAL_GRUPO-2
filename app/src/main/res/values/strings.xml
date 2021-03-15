@@ -16,4 +16,5 @@
     <string name="REGRESAR">REGRESAR</string>
     <string name="txvpalabraoficial">%s</string>
     <string name="variables">%s</string>
+    <string name="SALIR">SALIDA</string>
 </resources>
