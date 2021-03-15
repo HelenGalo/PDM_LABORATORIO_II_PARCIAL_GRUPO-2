@@ -47,6 +47,7 @@ class EnviarMatriculaCorreo : AppCompatActivity() {
         val p = Process.myPid()
         Process.killProcess(p)
         val intent= Intent(this,MainActivity::class.java)
+        intent.putExtra("end", nota)
         startActivity(intent)
     }
 
