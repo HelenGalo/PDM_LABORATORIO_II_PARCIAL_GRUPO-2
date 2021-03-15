@@ -139,67 +139,66 @@
 
     <Spinner
         android:id="@+id/spinner_Ed"
-        android:layout_width="153dp"
-        android:layout_height="42dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="@color/white"
+        android:background="@color/gray1"
         android:padding="20dp"
         android:textAlignment="center"
-        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.882"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.728" />
+        app:layout_constraintVertical_bias="0.526" />
 
     <Spinner
         android:id="@+id/spinner_Hora"
-        android:layout_width="153dp"
-        android:layout_height="42dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="@color/white"
+        android:background="@color/gray1"
         android:padding="20dp"
         android:textAlignment="center"
-        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.17"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.728" />
+        app:layout_constraintVertical_bias="0.526" />
 
     <Spinner
         android:id="@+id/spinner_A"
-        android:layout_width="153dp"
-        android:layout_height="42dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="@color/white"
+        android:background="@color/gray1"
         android:padding="20dp"
         android:textAlignment="center"
-        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.864"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.561" />
+        app:layout_constraintVertical_bias="0.526" />
+
 
     <Spinner
         android:id="@+id/spinner_Sec"
-        android:layout_width="153dp"
-        android:layout_height="42dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="@color/white"
+        android:background="@color/gray1"
         android:padding="20dp"
         android:textAlignment="center"
-        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.17"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.561" />
+        app:layout_constraintVertical_bias="0.526" />
+
+
 
     <EditText
         android:id="@+id/txt_nCuentaA2"
