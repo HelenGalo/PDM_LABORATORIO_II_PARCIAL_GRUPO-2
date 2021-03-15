@@ -3,6 +3,7 @@ package hn.edu.pdm_laboratorio_prueba
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Process
 import kotlinx.android.synthetic.main.activity_enviar_matricula_correo.*
 
 class EnviarMatriculaCorreo : AppCompatActivity() {
@@ -12,6 +13,7 @@ class EnviarMatriculaCorreo : AppCompatActivity() {
         setContentView(R.layout.activity_enviar_matricula_correo)
         obtener()
         btn_Envio2.setOnClickListener { enviar() }
+        btn_regresarEn.setOnClickListener {regresar() }
     }
 
 
@@ -35,6 +37,13 @@ class EnviarMatriculaCorreo : AppCompatActivity() {
 
 
 
+    }
+
+    private fun regresar(){
+        val p = Process.myPid()
+        Process.killProcess(p)
+        val intent= Intent(this,MainActivity::class.java)
+        startActivity(intent)
     }
 
 }

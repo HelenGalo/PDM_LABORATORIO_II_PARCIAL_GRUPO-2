@@ -7,6 +7,25 @@
     tools:context=".EnviarMatriculaCorreo">
 
     <Button
+        android:id="@+id/btn_regresarEn"
+        android:layout_width="147dp"
+        android:layout_height="61dp"
+        android:background="@color/red4"
+        android:foreground="@android:drawable/ic_menu_rotate"
+        android:foregroundGravity="top|bottom|clip_horizontal|right"
+        android:freezesText="false"
+        android:text="@string/REGRESAR"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.825"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.814" />
+
+    <Button
         android:id="@+id/btn_Envio2"
         android:layout_width="115dp"
         android:layout_height="65dp"
@@ -19,9 +38,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.26"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.808" />
+        app:layout_constraintVertical_bias="0.817" />
 
     <TextView
         android:id="@+id/txv_TituloEM2"

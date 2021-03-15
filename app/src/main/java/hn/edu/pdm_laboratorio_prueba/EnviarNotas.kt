@@ -35,8 +35,7 @@ class EnviarNotas:AppCompatActivity() {
     }
 
     private fun regresar(){
-        val p = Process.myPid()
-        Process.killProcess(p)
+
         val intent= Intent(this,MainActivity::class.java)
         startActivity(intent)
     }
