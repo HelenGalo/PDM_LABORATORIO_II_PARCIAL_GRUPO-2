@@ -152,11 +152,7 @@ class RegistrarClase : AppCompatActivity() {
     }
 
 
-    private fun enviar(){
-        val intent = Intent(this, EnviarMatricula ::class.java)
-        intent.putExtra("datos", datos_Clase)
-        startActivity(intent)
-    }
+
 
     fun regresar3() {
         val intent = Intent(this, MainActivity::class.java)
