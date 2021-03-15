@@ -23,7 +23,7 @@ class EnviarMatriculaCorreo : AppCompatActivity() {
         var to = arrayOf<String>(txt_Correo.text.toString(), "helen.orellana1@ujcv.edu.hn","miguel.torres@ujcv.edu.hn","Daniela.herrera@ujcv.edu.hn","edwin.espino@ujcv.edu.hn")
         val intent = Intent(Intent.ACTION_SEND)
         intent.putExtra(Intent.EXTRA_EMAIL,to)
-        intent.putExtra(Intent.EXTRA_SUBJECT, txt_ASUNTO.text)
+        intent.putExtra(Intent.EXTRA_SUBJECT, txt_ASUNTO.text.toString())
         intent.putExtra(Intent.EXTRA_TEXT, datos_Matricula.toString())
         intent.setType("message/rfc822");
         startActivity(Intent.createChooser(intent, "Email"))
